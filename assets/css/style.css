@@ -17,7 +17,7 @@ html {
 }
 
 button {
-  background-color: transparent;
+  outline: none;
   border: none;
 }
 
@@ -132,7 +132,7 @@ img {
 }
 
 .header-top .dropdownn li:hover {
-  background-color: #eaedf0;
+  background-color: #f3f5f9;
 }
 
 .header-top .dropdownn i {
@@ -154,4 +154,82 @@ img {
 
 .rotate-arrow {
   transform: rotate(180deg);
+}
+
+/* === header-middle === */
+.header-middle {
+  padding: 16px 0;
+}
+
+.header-middle form {
+  width: 450px;
+  position: relative;
+}
+
+.header-middle button[type="submit"] {
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 17px;
+}
+
+.header-middle input[type="text"] {
+  padding: 0 30px 0 45px;
+  height: 44px;
+  width: 100%;
+  border: 1px solid #aeb4be;
+  border-radius: 300px;
+  outline: none;
+}
+
+.header-middle input[type="text"]:focus {
+  border: 1px solid #e94560;
+}
+
+.header-middle .actions {
+  width: 220px;
+}
+
+.header-middle .actions a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+.header-middle .actions li {
+  position: relative;
+}
+
+.header-middle .actions sup {
+  position: absolute;
+  top: -11px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e94560;
+  color: #fff;
+  text-align: center;
+  line-height: 15px;
+}
+
+.header-middle .actions a::after {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f3f5f9;
+  position: absolute;
+  right: -13px;
+  top: -19px;
+  z-index: -1;
+}
+
+.header-middle .actions i::before {
+  font-size: 22px;
+  font-weight: bold !important;
+}
+
+.header-middle .actions .flaticon-balance::before {
+  font-size: 23px;
+  font-weight: normal !important;
 }

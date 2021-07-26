@@ -24,4 +24,14 @@ $(document).ready(function () {
             $(".dropdown-top .flaticon-down-arrow").removeClass("rotate-arrow");
         }
     });
+
+    // ======= Owl-Carousel ======= //
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        margin: 10,
+        nav: true,
+        items: 1
+    });
 });

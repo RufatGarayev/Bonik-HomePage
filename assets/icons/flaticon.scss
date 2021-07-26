@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?5f34e6da5f191b698d8cd16cc376a7b9") format("truetype"),
-url("./flaticon.woff?5f34e6da5f191b698d8cd16cc376a7b9") format("woff"),
-url("./flaticon.woff2?5f34e6da5f191b698d8cd16cc376a7b9") format("woff2"),
-url("./flaticon.eot?5f34e6da5f191b698d8cd16cc376a7b9#iefix") format("embedded-opentype"),
-url("./flaticon.svg?5f34e6da5f191b698d8cd16cc376a7b9#flaticon") format("svg");
+    src: url("./flaticon.ttf?05838f70b1a066432e312fbf8a9f7187") format("truetype"),
+url("./flaticon.woff?05838f70b1a066432e312fbf8a9f7187") format("woff"),
+url("./flaticon.woff2?05838f70b1a066432e312fbf8a9f7187") format("woff2"),
+url("./flaticon.eot?05838f70b1a066432e312fbf8a9f7187#iefix") format("embedded-opentype"),
+url("./flaticon.svg?05838f70b1a066432e312fbf8a9f7187#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -59,6 +59,9 @@ $flaticon-map: (
     "heart": "\f124",
     "menu-1": "\f125",
     "balance": "\f126",
+    "man": "\f127",
+    "woman": "\f128",
+    "right-arrow-angle": "\f129",
 );
 
 .flaticon-dress:before {
@@ -174,4 +177,13 @@ $flaticon-map: (
 }
 .flaticon-balance:before {
     content: map-get($flaticon-map, "balance");
+}
+.flaticon-man:before {
+    content: map-get($flaticon-map, "man");
+}
+.flaticon-woman:before {
+    content: map-get($flaticon-map, "woman");
+}
+.flaticon-right-arrow-angle:before {
+    content: map-get($flaticon-map, "right-arrow-angle");
 }

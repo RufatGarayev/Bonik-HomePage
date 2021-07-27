@@ -51,8 +51,8 @@ $(document).ready(function () {
     );
   });
 
-  // ======= Owl-Carousel ======= //
-  $(".owl-carousel").owlCarousel({
+  // ======= Owl-Carousel for Best Seller section ======= //
+  $(".best-seller-carousel").owlCarousel({
     loop: true,
     dots: false,
     autoplay: true,
@@ -69,6 +69,28 @@ $(document).ready(function () {
       },
       1000: {
         items: 4,
+      },
+    },
+  });
+
+  // ======= Owl-Carousel for New Arrivals section ======= //
+  $(".new-arrivals-carousel").owlCarousel({
+    loop: true,
+    dots: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    margin: 20,
+    nav: true,
+    navText : ["<i class='flaticon-left-arrow'></i>","<i class='flaticon-right-arrow'></i>"],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 4,
+      },
+      1000: {
+        items: 6,
       },
     },
   });

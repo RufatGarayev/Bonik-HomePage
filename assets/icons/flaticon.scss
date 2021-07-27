@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?fcd77b5a85f6e0763fc1c1e37c0948ff") format("truetype"),
-url("./flaticon.woff?fcd77b5a85f6e0763fc1c1e37c0948ff") format("woff"),
-url("./flaticon.woff2?fcd77b5a85f6e0763fc1c1e37c0948ff") format("woff2"),
-url("./flaticon.eot?fcd77b5a85f6e0763fc1c1e37c0948ff#iefix") format("embedded-opentype"),
-url("./flaticon.svg?fcd77b5a85f6e0763fc1c1e37c0948ff#flaticon") format("svg");
+    src: url("./flaticon.ttf?851532545de9729496d3d6b80230baea") format("truetype"),
+url("./flaticon.woff?851532545de9729496d3d6b80230baea") format("woff"),
+url("./flaticon.woff2?851532545de9729496d3d6b80230baea") format("woff2"),
+url("./flaticon.eot?851532545de9729496d3d6b80230baea#iefix") format("embedded-opentype"),
+url("./flaticon.svg?851532545de9729496d3d6b80230baea#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -42,7 +42,7 @@ $flaticon-map: (
     "photo": "\f113",
     "plus": "\f114",
     "remove": "\f115",
-    "star-1": "\f116",
+    "star": "\f116",
     "play-button": "\f117",
     "right-arrow": "\f118",
     "left-arrow": "\f119",
@@ -50,20 +50,20 @@ $flaticon-map: (
     "new": "\f11b",
     "delivery": "\f11c",
     "credit-card": "\f11d",
-    "shield": "\f11e",
-    "headphone": "\f11f",
-    "facebook-logo": "\f120",
-    "youtube": "\f121",
-    "g": "\f122",
-    "instagram": "\f123",
-    "heart": "\f124",
-    "menu-1": "\f125",
-    "balance": "\f126",
-    "man": "\f127",
-    "woman": "\f128",
-    "right-arrow-angle": "\f129",
-    "left-arrow-1": "\f12a",
-    "best": "\f12b",
+    "headphone": "\f11e",
+    "facebook-logo": "\f11f",
+    "youtube": "\f120",
+    "g": "\f121",
+    "instagram": "\f122",
+    "heart": "\f123",
+    "menu-1": "\f124",
+    "balance": "\f125",
+    "man": "\f126",
+    "woman": "\f127",
+    "right-arrow-angle": "\f128",
+    "left-arrow-1": "\f129",
+    "best": "\f12a",
+    "previous": "\f12b",
 );
 
 .flaticon-dress:before {
@@ -129,8 +129,8 @@ $flaticon-map: (
 .flaticon-remove:before {
     content: map-get($flaticon-map, "remove");
 }
-.flaticon-star-1:before {
-    content: map-get($flaticon-map, "star-1");
+.flaticon-star:before {
+    content: map-get($flaticon-map, "star");
 }
 .flaticon-play-button:before {
     content: map-get($flaticon-map, "play-button");
@@ -152,9 +152,6 @@ $flaticon-map: (
 }
 .flaticon-credit-card:before {
     content: map-get($flaticon-map, "credit-card");
-}
-.flaticon-shield:before {
-    content: map-get($flaticon-map, "shield");
 }
 .flaticon-headphone:before {
     content: map-get($flaticon-map, "headphone");
@@ -194,4 +191,7 @@ $flaticon-map: (
 }
 .flaticon-best:before {
     content: map-get($flaticon-map, "best");
+}
+.flaticon-previous:before {
+    content: map-get($flaticon-map, "previous");
 }

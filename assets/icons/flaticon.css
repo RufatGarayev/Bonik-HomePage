@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?fcd77b5a85f6e0763fc1c1e37c0948ff") format("truetype"),
-url("./flaticon.woff?fcd77b5a85f6e0763fc1c1e37c0948ff") format("woff"),
-url("./flaticon.woff2?fcd77b5a85f6e0763fc1c1e37c0948ff") format("woff2"),
-url("./flaticon.eot?fcd77b5a85f6e0763fc1c1e37c0948ff#iefix") format("embedded-opentype"),
-url("./flaticon.svg?fcd77b5a85f6e0763fc1c1e37c0948ff#flaticon") format("svg");
+    src: url("./flaticon.ttf?851532545de9729496d3d6b80230baea") format("truetype"),
+url("./flaticon.woff?851532545de9729496d3d6b80230baea") format("woff"),
+url("./flaticon.woff2?851532545de9729496d3d6b80230baea") format("woff2"),
+url("./flaticon.eot?851532545de9729496d3d6b80230baea#iefix") format("embedded-opentype"),
+url("./flaticon.svg?851532545de9729496d3d6b80230baea#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -81,7 +81,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-remove:before {
     content: "\f115";
 }
-.flaticon-star-1:before {
+.flaticon-star:before {
     content: "\f116";
 }
 .flaticon-play-button:before {
@@ -105,45 +105,45 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-credit-card:before {
     content: "\f11d";
 }
-.flaticon-shield:before {
+.flaticon-headphone:before {
     content: "\f11e";
 }
-.flaticon-headphone:before {
+.flaticon-facebook-logo:before {
     content: "\f11f";
 }
-.flaticon-facebook-logo:before {
+.flaticon-youtube:before {
     content: "\f120";
 }
-.flaticon-youtube:before {
+.flaticon-g:before {
     content: "\f121";
 }
-.flaticon-g:before {
+.flaticon-instagram:before {
     content: "\f122";
 }
-.flaticon-instagram:before {
+.flaticon-heart:before {
     content: "\f123";
 }
-.flaticon-heart:before {
+.flaticon-menu-1:before {
     content: "\f124";
 }
-.flaticon-menu-1:before {
+.flaticon-balance:before {
     content: "\f125";
 }
-.flaticon-balance:before {
+.flaticon-man:before {
     content: "\f126";
 }
-.flaticon-man:before {
+.flaticon-woman:before {
     content: "\f127";
 }
-.flaticon-woman:before {
+.flaticon-right-arrow-angle:before {
     content: "\f128";
 }
-.flaticon-right-arrow-angle:before {
+.flaticon-left-arrow-1:before {
     content: "\f129";
 }
-.flaticon-left-arrow-1:before {
+.flaticon-best:before {
     content: "\f12a";
 }
-.flaticon-best:before {
+.flaticon-previous:before {
     content: "\f12b";
 }

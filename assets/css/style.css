@@ -1,6 +1,6 @@
-/* =====================
-    GENERAL SETTINGS
-===================== */
+/* ==============================
+         GENERAL SETTINGS
+============================== */
 * {
   margin: 0;
   padding: 0;
@@ -66,6 +66,7 @@ img {
 
 .section-header .link i::before {
   margin-left: 7px;
+  font-size: 12px;
 }
 
 .section-header .title h3 {
@@ -75,12 +76,53 @@ img {
 .section-header .title i::before {
   color: #e94560;
   font-size: 32px;
-  margin-right: 7px;
+  margin-right: 9px;
 }
 
-/* =====================
-        HEADER
-===================== */
+/* ===== Owl-carousel ===== */
+.owl-carousel .owl-stage-outer {
+  padding: 10px 0;
+}
+
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 46%;
+  width: 100%;
+  transform: translate(0px, -50%);
+}
+
+.owl-carousel .owl-nav i::before {
+  font-size: 18px;
+}
+
+.owl-carousel .owl-nav button {
+  background-color: #0f3460 !important;
+  position: absolute;
+  top: 50%;
+  color: #fff !important;
+  width: 40px;
+  height: 40px;
+  line-height: 0px !important;
+  border-radius: 50% !important;
+  transform: translate(0px, -50%);
+  transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-prev {
+  left: -24px;
+}
+
+.owl-carousel .owl-next {
+  right: -24px;
+}
+
+.owl-carousel .owl-nav button span {
+  font-size: 28px;
+}
+
+/* ==============================
+             HEADER
+============================== */
 header {
   box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
 }
@@ -499,9 +541,9 @@ header {
   transform-origin: 0% 50%;
 }
 
-/* =====================
-        INTRO
-===================== */
+/* ==============================
+              INTRO
+============================== */
 #intro {
   padding: 85px 0 94px;
 }
@@ -610,9 +652,9 @@ header {
   transform: translate(-50%, -50%) scaleX(1);
 }
 
-/* =====================
-      BEST SELLER
-===================== */
+/* ==============================
+           BEST SELLER
+============================== */
 #best-seller {
   padding: 70px 0;
   background-color: #f6f9fc;
@@ -622,49 +664,9 @@ header {
   padding-bottom: 5px;
 }
 
-#best-seller .owl-stage-outer {
-  padding: 10px 0;
-}
-
-#best-seller .owl-nav {
-  position: absolute;
-  top: 46%;
-  width: 100%;
-  transform: translate(0px, -50%);
-}
-
-#best-seller .owl-nav i::before{
-  font-size: 18px;
-}
-
-#best-seller .owl-nav button {
-  background-color: #0f3460;
-  position: absolute;
-  top: 50%;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  line-height: 0px;
-  border-radius: 50%;
-  transform: translate(0px, -50%);
-  transition: all 0.3s ease;
-}
-
-#best-seller .owl-prev {
-  left: -24px;
-}
-
-#best-seller .owl-next {
-  right: -24px;
-}
-
-#best-seller .owl-nav button span {
-  font-size: 28px;
-}
-
 #best-seller .item {
   background-color: #fff;
-  box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+  box-shadow: 0px 1px 3px rgba(3, 0, 71, 0.1);
   border-radius: 5px;
   height: 410px;
   padding: 20px;
@@ -734,7 +736,7 @@ header {
   color: #000;
   background-color: #f6f9fc;
   border-radius: 50%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 #best-seller .item-top .actions button:hover {
@@ -755,7 +757,7 @@ header {
   padding: 3px 7px;
   border-radius: 5px;
   line-height: 19px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   opacity: 0;
   visibility: hidden;
   text-align: center;
@@ -875,4 +877,291 @@ header {
 
 #best-seller .add-to-cart-btn p {
   line-height: 20px;
+}
+
+/* ==============================
+         TOP CATEGORIES
+============================== */
+#top-categories {
+  padding: 0 0 40px;
+  background-color: #f6f9fc;
+}
+
+#top-categories .section-header .title i::before {
+  font-size: 22px;
+}
+
+#top-categories .item-wrapper {
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(3, 0, 71, 0.1);
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#top-categories .item-wrapper .label {
+  position: absolute;
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 7;
+}
+
+#top-categories .item-wrapper .label p {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+#top-categories .item-wrapper .title {
+  background-color: #0f3460;
+  color: #fff;
+  top: 29px;
+  left: 30px;
+}
+
+#top-categories .item-wrapper .description {
+  background-color: #e3e9ef;
+  color: #5c6472;
+  top: 29px;
+  right: 30px;
+}
+
+#top-categories .item img {
+  border-radius: 8px;
+}
+
+#top-categories .item {
+  position: relative;
+}
+
+#top-categories .item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  background-color: #e94560;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#top-categories .item:hover::after {
+  opacity: 0.4;
+  visibility: visible;
+}
+
+/* ==============================
+          NEW ARRIVALS
+============================== */
+#new-arrivals {
+  background-color: #f6f9fc;
+  padding: 40px 0;
+}
+
+#new-arrivals .item {
+  box-shadow: 0px 1px 3px rgba(3, 0, 71, 0.1);
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+#new-arrivals .item:hover .item-top img {
+  transform: scale(1.4);
+}
+
+#new-arrivals .item-top {
+  position: relative;
+}
+
+#new-arrivals .item-top .label {
+  background-color: #0f3460;
+  color: #fff;
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 7;
+}
+
+#new-arrivals .item-top .label p {
+  font-size: 10px;
+}
+
+#new-arrivals .item-top .img {
+  overflow: hidden;
+}
+
+#new-arrivals .item-top img {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#new-arrivals .item-bottom {
+  padding-top: 15px;
+}
+
+#new-arrivals .item-bottom .title {
+  padding-bottom: 3px;
+}
+
+#new-arrivals .item-bottom .title a {
+  color: #e94560;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#new-arrivals .item-bottom .title a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#new-arrivals .item-bottom .price span {
+  font-weight: 600;
+}
+
+/* ==============================
+           ADVANTAGES
+============================== */
+#advantages {
+  background-color: #f6f9fc;
+  padding: 40px 0 70px;
+}
+
+#advantages .item {
+  position: relative;
+  height: 147px;
+}
+
+#advantages .item-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#advantages .item-title {
+  padding-top: 15px;
+}
+
+#advantages .item-front h5 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#advantages .item-front i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  background-color: rgb(243, 245, 249);
+  border-radius: 50%;
+}
+
+#advantages .item-front i::before {
+  color: #0f3460;
+  font-size: 30px;
+}
+
+#advantages .item-back p {
+  color: #fff;
+  font-size: 13px;
+}
+
+#advantages .item-front,
+.item-back {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(3, 0, 71, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.5s linear;
+}
+
+#advantages .item-front {
+  display: flex;
+  align-items: center;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+#advantages .item-back {
+  background-color: #e94560;
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  align-items: center;
+}
+
+#advantages .item:hover .item-front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+#advantages .item:hover .item-back {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+
+/* ==============================
+             FOOTER
+============================== */
+footer{
+  padding: 80px 0 100px;
+  background-color: #0F3460;
+}
+
+footer .brand{
+  width: 100px;
+}
+
+footer .store-wrapper{
+  width: 294px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .description{
+  padding: 20px 0 22px;
+  color: #9FB4BE;
+}
+
+footer .google-play{
+  width: 145px;
+}
+
+footer .app-store{
+  width: 132px;
+}
+
+footer .store-item .img{
+  height: 25px;
+}
+
+footer .store-item .text{
+  color: #fff;
+}
+
+footer .store-item .text p{
+  font-size: 8px;
+}
+
+footer .store-item .text h6{
+  font-weight: 600;
+  margin: 0;
+}
+
+footer .store-item a{
+  background-color: #0C2A4D;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
 }

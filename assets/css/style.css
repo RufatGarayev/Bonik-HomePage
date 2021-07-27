@@ -840,6 +840,10 @@ header {
   color: #ffb503;
 }
 
+#best-seller .rating span{
+  width: 90px;
+}
+
 #best-seller .title a {
   color: #e94560;
   font-size: 13px;
@@ -962,6 +966,14 @@ header {
   padding: 40px 0;
 }
 
+#new-arrivals .owl-carousel {
+  padding: 10px 16px 10px 14px;
+}
+
+#new-arrivals .owl-carousel .owl-next {
+  right: 5px;
+}
+
 #new-arrivals .item {
   box-shadow: 0px 1px 3px rgba(3, 0, 71, 0.1);
   background-color: #fff;
@@ -1031,7 +1043,7 @@ header {
 ============================== */
 #advantages {
   background-color: #f6f9fc;
-  padding: 40px 0 70px;
+  padding: 40px 0 100px;
 }
 
 #advantages .item {
@@ -1110,17 +1122,26 @@ header {
   transform: perspective(600px) rotateY(0deg);
 }
 
-
 /* ==============================
              FOOTER
 ============================== */
 footer{
-  padding: 80px 0 100px;
+  padding: 80px 0 95px;
   background-color: #0F3460;
 }
 
 footer .brand{
   width: 100px;
+}
+
+footer a{
+  text-decoration: none !important;
+  transition: all .3s ease;
+}
+
+footer h2{
+  font-size: 25px;
+  font-weight: 600;
 }
 
 footer .store-wrapper{
@@ -1163,5 +1184,39 @@ footer .store-item a{
   background-color: #0C2A4D;
   padding: 10px 16px;
   border-radius: 5px;
-  text-decoration: none;
+}
+
+footer .links li, .contact-us p{
+  padding: 5px 0;
+}
+
+footer .links a, .contact-us p{
+  color: #9FB4BE;
+}
+
+footer .links a:hover{
+  color: #fff;
+}
+
+footer .contact-bottom{
+  padding-top: 20px;
+}
+
+footer .social-media{
+  width: 165px;
+}
+
+footer .social-media a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0C2A4D;
+  color: #fff;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+
+footer .social-media i::before{
+  font-size: 12px;
 }

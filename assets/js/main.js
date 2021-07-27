@@ -94,4 +94,17 @@ $(document).ready(function () {
       },
     },
   });
+
+  // ======= Back-To-Top Btn ======= //
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+      $("#back-to-top-btn").show();
+    } else {
+      $("#back-to-top-btn").hide();
+    }
+  });
+
+  $("#back-to-top-btn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 100);
+  });
 });

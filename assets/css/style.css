@@ -23,9 +23,23 @@ button {
   border: none;
 }
 
+input[type="text"] {
+  padding: 0 30px 0 45px;
+  height: 44px;
+  width: 100%;
+  border: 1px solid #aeb4be;
+  border-radius: 22px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #e94560;
+}
+
 input[type="submit"],
 button {
   cursor: pointer;
+  border: none;
 }
 
 ul,
@@ -261,19 +275,6 @@ header {
   position: absolute;
   top: 13px;
   left: 17px;
-}
-
-.header-middle input[type="text"] {
-  padding: 0 30px 0 45px;
-  height: 44px;
-  width: 100%;
-  border: 1px solid #aeb4be;
-  border-radius: 300px;
-  outline: none;
-}
-
-.header-middle input[type="text"]:focus {
-  border: 1px solid #e94560;
 }
 
 .header-middle .actions {
@@ -840,7 +841,7 @@ header {
   color: #ffb503;
 }
 
-#best-seller .rating span{
+#best-seller .rating span {
   width: 90px;
 }
 
@@ -1123,100 +1124,163 @@ header {
 }
 
 /* ==============================
-             FOOTER
+            SUBSCRIBE
 ============================== */
-footer{
-  padding: 80px 0 95px;
-  background-color: #0F3460;
+#subscribe {
+  padding: 70px 0;
+  background-color: #fff;
 }
 
-footer .brand{
+#subscribe .subscribe-text h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#subscribe .subscribe-form {
+  height: 100%;
+  padding-left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#subscribe input[type="text"] {
+  padding: 0 20px;
+}
+
+#subscribe input[type="submit"] {
+  background-color: #e94560;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  height: 44px;
+  width: 100px;
+  border-radius: 0 22px 22px 0;
+  transition: all 0.3s ease;
+}
+
+#subscribe input[type="submit"]:hover {
+  background-color: #ce3952;
+}
+
+/* ==============================
+             FOOTER
+============================== */
+footer {
+  padding: 80px 0 95px;
+  background-color: #0f3460;
+}
+
+footer .brand {
   width: 100px;
 }
 
-footer a{
+footer a {
   text-decoration: none !important;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-footer h2{
+footer h2 {
   font-size: 25px;
   font-weight: 600;
 }
 
-footer .store-wrapper{
+footer .store-wrapper {
   width: 294px;
   justify-content: space-between;
   align-items: center;
 }
 
-footer .description{
+footer .description {
   padding: 20px 0 22px;
-  color: #9FB4BE;
+  color: #9fb4be;
 }
 
-footer .google-play{
+footer .google-play {
   width: 145px;
 }
 
-footer .app-store{
+footer .app-store {
   width: 132px;
 }
 
-footer .store-item .img{
+footer .store-item .img {
   height: 25px;
 }
 
-footer .store-item .text{
+footer .store-item .text {
   color: #fff;
 }
 
-footer .store-item .text p{
+footer .store-item .text p {
   font-size: 8px;
 }
 
-footer .store-item .text h6{
+footer .store-item .text h6 {
   font-weight: 600;
   margin: 0;
 }
 
-footer .store-item a{
-  background-color: #0C2A4D;
+footer .store-item a {
+  background-color: #0c2a4d;
   padding: 10px 16px;
   border-radius: 5px;
 }
 
-footer .links li, .contact-us p{
+footer .links li,
+.contact-us p {
   padding: 5px 0;
 }
 
-footer .links a, .contact-us p{
-  color: #9FB4BE;
+footer .links a,
+.contact-us p {
+  color: #9fb4be;
 }
 
-footer .links a:hover{
+footer .links a:hover {
   color: #fff;
 }
 
-footer .contact-bottom{
+footer .contact-bottom {
   padding-top: 20px;
 }
 
-footer .social-media{
+footer .social-media {
   width: 165px;
 }
 
-footer .social-media a{
+footer .social-media a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0C2A4D;
+  background-color: #0c2a4d;
   color: #fff;
   width: 33px;
   height: 33px;
   border-radius: 50%;
 }
 
-footer .social-media i::before{
+footer .social-media i::before {
   font-size: 12px;
+}
+
+
+/* ==============================
+         BACK TO TOP BTN
+============================== */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #e94560;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: none;
+  z-index: 999999;
+}
+
+#back-to-top-btn:hover {
+  background-color: #ce3952;
 }

@@ -57,6 +57,8 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 100);
   });
 
+  // $('#loginModal').modal('show');
+
   // ======= Countdown ======= //
   $(".countdown-active").countdown("2022/05/01", function (e) {
     $(this).html(e.strftime(
@@ -120,5 +122,33 @@ $(document).ready(function () {
         items: 6,
       },
     },
+  });
+
+  // ======= Login Validation ======= //
+  $(function () {
+    // rules 
+    $("#login-submit").validate({
+      rules: {
+        loginEmail: {
+          required: true,
+          minlength: 12,
+          email: true
+        },
+        loginPassword: {
+          required: true,
+          minlength: 8,
+        }
+      },
+
+      // in the case of an error
+      highlight: function (element) {
+        $(element).css("border", "2px solid red");
+      },
+
+      // when there is no error
+      unhighlight: function (element) {
+        $(element).css("border", "2px solid green");
+      }
+    });
   });
 });

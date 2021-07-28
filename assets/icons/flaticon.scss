@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?207939878142c4eccb29551353c404a8") format("truetype"),
-url("./flaticon.woff?207939878142c4eccb29551353c404a8") format("woff"),
-url("./flaticon.woff2?207939878142c4eccb29551353c404a8") format("woff2"),
-url("./flaticon.eot?207939878142c4eccb29551353c404a8#iefix") format("embedded-opentype"),
-url("./flaticon.svg?207939878142c4eccb29551353c404a8#flaticon") format("svg");
+    src: url("./flaticon.ttf?c2c2f0e8c258bb2527859a446a48e9f7") format("truetype"),
+url("./flaticon.woff?c2c2f0e8c258bb2527859a446a48e9f7") format("woff"),
+url("./flaticon.woff2?c2c2f0e8c258bb2527859a446a48e9f7") format("woff2"),
+url("./flaticon.eot?c2c2f0e8c258bb2527859a446a48e9f7#iefix") format("embedded-opentype"),
+url("./flaticon.svg?c2c2f0e8c258bb2527859a446a48e9f7#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -42,7 +42,7 @@ $flaticon-map: (
     "photo": "\f113",
     "plus": "\f114",
     "remove": "\f115",
-    "star-1": "\f116",
+    "star": "\f116",
     "play-button": "\f117",
     "right-arrow": "\f118",
     "left-arrow": "\f119",
@@ -63,8 +63,9 @@ $flaticon-map: (
     "right-arrow-angle": "\f128",
     "left-arrow-1": "\f129",
     "best": "\f12a",
-    "previous": "\f12b",
-    "star": "\f12c",
+    "star-1": "\f12b",
+    "previous": "\f12c",
+    "linkedin": "\f12d",
 );
 
 .flaticon-dress:before {
@@ -130,8 +131,8 @@ $flaticon-map: (
 .flaticon-remove:before {
     content: map-get($flaticon-map, "remove");
 }
-.flaticon-star-1:before {
-    content: map-get($flaticon-map, "star-1");
+.flaticon-star:before {
+    content: map-get($flaticon-map, "star");
 }
 .flaticon-play-button:before {
     content: map-get($flaticon-map, "play-button");
@@ -193,9 +194,12 @@ $flaticon-map: (
 .flaticon-best:before {
     content: map-get($flaticon-map, "best");
 }
+.flaticon-star-1:before {
+    content: map-get($flaticon-map, "star-1");
+}
 .flaticon-previous:before {
     content: map-get($flaticon-map, "previous");
 }
-.flaticon-star:before {
-    content: map-get($flaticon-map, "star");
+.flaticon-linkedin:before {
+    content: map-get($flaticon-map, "linkedin");
 }

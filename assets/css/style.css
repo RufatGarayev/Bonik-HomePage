@@ -23,7 +23,8 @@ button {
   border: none;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   padding: 0 30px 0 45px;
   height: 44px;
   width: 100%;
@@ -32,7 +33,8 @@ input[type="text"] {
   outline: none;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   border: 1px solid #e94560;
 }
 
@@ -140,7 +142,7 @@ img {
 header {
   position: relative;
   box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
-  z-index: 99999;
+  z-index: 999;
 }
 
 /* ======= Header-Top ======= */
@@ -368,7 +370,7 @@ header .actions li:hover .action-tooltip {
   height: 66px;
 }
 
-.header-bottom-wrapper{
+.header-bottom-wrapper {
   background-color: #fff;
   position: absolute;
   top: 0;
@@ -379,7 +381,7 @@ header .actions li:hover .action-tooltip {
   z-index: 99999;
 }
 
-.sticky{
+.sticky {
   box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
   position: fixed;
   top: 0;
@@ -565,11 +567,11 @@ header .actions li:hover .action-tooltip {
   transform-origin: 0% 50%;
 }
 
-.header-bottom .brand{
+.header-bottom .brand {
   display: none;
 }
 
-.header-bottom .actions{
+.header-bottom .actions {
   display: none;
 }
 
@@ -1295,7 +1297,6 @@ footer .social-media i::before {
   font-size: 12px;
 }
 
-
 /* ==============================
          BACK TO TOP BTN
 ============================== */
@@ -1309,9 +1310,94 @@ footer .social-media i::before {
   height: 45px;
   border-radius: 50%;
   display: none;
-  z-index: 999999;
+  z-index: 999;
 }
 
 #back-to-top-btn:hover {
   background-color: #ce3952;
+}
+
+/* ==============================
+        LOGIN FORM (MODAL)
+============================== */
+#loginModal {
+  z-index: 999999;
+}
+
+#loginModal .modal-dialog {
+  max-width: 450px;
+}
+
+#loginModal .modal-header {
+  padding: 15px 25px;
+}
+
+#loginModal .modal-body {
+  padding: 0 25px 15px;
+}
+
+#loginModal .modal-header .close span {
+  font-size: 22px;
+}
+
+#loginModal .modal-footer {
+  background-color: #F3F5F9;
+}
+
+#loginModal form label {
+  font-size: 13px;
+}
+
+#loginModal .form-title {
+  padding-bottom: 20px;
+}
+
+#loginModal .form-title h5 {
+  font-weight: 600;
+}
+
+#loginModal input[type="text"],
+input[type="password"] {
+  height: 40px;
+  border-radius: 5px;
+}
+
+#loginModal input[type="submit"] {
+  padding: 8px 0 11px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#loginModal input[type="submit"]:hover {
+  background-color: #ce3952;
+}
+
+#loginModal .delimiter {
+  padding: 1rem;
+}
+
+#loginModal .social-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem 1rem;
+  background-color: #0c2a4d;
+  width: 33px;
+  height: 33px;
+}
+
+#loginModal .social-buttons button i::before {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+#loginModal .signup-section {
+  padding: 0.3rem 0rem;
+}
+
+@media (max-width: 576px) {
+  #loginModal .modal-dialog {
+    max-width: none;
+    width: 100%;
+  }
 }

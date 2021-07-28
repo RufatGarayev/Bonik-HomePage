@@ -28,10 +28,39 @@ $(document).ready(function () {
     }
   });
 
+  // ======= Events On Scroll ======= //
+  $(window).scroll(function () {
+    // back-to-top btn
+    if ($(this).scrollTop() > 300) {
+      $("#back-to-top-btn").show();
+    } else {
+      $("#back-to-top-btn").hide();
+    }
+
+    // making the header sticky
+    if ($(this).scrollTop() >= 121) {
+      $(".header-bottom-wrapper").addClass("sticky");
+      $(".header-bottom-wrapper .actions").show();
+      $(".header-bottom-wrapper .brand").show();
+      $(".header-bottom-wrapper .categories-top-content").css("background-color", "#fff");
+      $(".header-bottom-wrapper .categories-top-content p").hide();
+    } else {
+      $(".header-bottom-wrapper").removeClass("sticky");
+      $(".header-bottom-wrapper .actions").hide();
+      $(".header-bottom-wrapper .brand").hide();
+      $(".header-bottom-wrapper .categories-top-content").css("background-color", "#f3f5f9");
+      $(".header-bottom-wrapper .categories-top-content p").show();
+    }
+  });
+
+  $("#back-to-top-btn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 100);
+  });
+
   // ======= Countdown ======= //
   $(".countdown-active").countdown("2022/05/01", function (e) {
     $(this).html(e.strftime(
-        `<div class="single-countdown">
+      `<div class="single-countdown">
             <h2>%D</h2>
             <span>Days</span>
         </div>
@@ -47,7 +76,7 @@ $(document).ready(function () {
             <h2>%S</h2>
             <span>Sec</span>
         </div>`
-      )
+    )
     );
   });
 
@@ -55,11 +84,9 @@ $(document).ready(function () {
   $(".best-seller-carousel").owlCarousel({
     loop: true,
     dots: false,
-    autoplay: true,
-    autoplayHoverPause: true,
     margin: 20,
     nav: true,
-    navText : ["<i class='flaticon-left-arrow'></i>","<i class='flaticon-right-arrow'></i>"],
+    navText: ["<i class='flaticon-left-arrow'></i>", "<i class='flaticon-right-arrow'></i>"],
     responsive: {
       0: {
         items: 1,
@@ -81,7 +108,7 @@ $(document).ready(function () {
     autoplayHoverPause: true,
     margin: 20,
     nav: true,
-    navText : ["<i class='flaticon-left-arrow'></i>","<i class='flaticon-right-arrow'></i>"],
+    navText: ["<i class='flaticon-left-arrow'></i>", "<i class='flaticon-right-arrow'></i>"],
     responsive: {
       0: {
         items: 1,
@@ -93,18 +120,5 @@ $(document).ready(function () {
         items: 6,
       },
     },
-  });
-
-  // ======= Back-To-Top Btn ======= //
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $("#back-to-top-btn").show();
-    } else {
-      $("#back-to-top-btn").hide();
-    }
-  });
-
-  $("#back-to-top-btn").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 100);
   });
 });

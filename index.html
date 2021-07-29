@@ -628,7 +628,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button type="button" data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -699,7 +699,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -769,7 +769,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -840,7 +840,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -910,7 +910,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -978,7 +978,7 @@
                             <div class="actions">
                                 <!-- quick-view -->
                                 <div class="quick-view action-wrapper">
-                                    <button>
+                                    <button data-toggle="modal" data-target="#quickViewModal">
                                         <i class="flaticon-photo"></i>
                                     </button>
                                     <div class="action-tooltip">
@@ -1411,8 +1411,10 @@
                     <div class="col-lg-7">
                         <!-- ===== form ===== -->
                         <div class="subscribe-form position-relative">
-                            <form class="d-flex w-100">
-                                <input type="text" placeholder="Email Address" required>
+                            <form id="subscribe-form" class="d-flex w-100">
+                                <div class="form-group w-100">
+                                    <input type="text" name="subscribeEmail" placeholder="Email Address">
+                                </div>
                                 <input type="submit" value="Subscribe">
                             </form>
                         </div>
@@ -1602,6 +1604,121 @@
         </div>
     </div>
     <!-- ======= LOGIN FORM (MODAL) - End ======= -->
+
+    <!-- ======= QUICK VIEW (MODAL) - Start ======= -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <!-- ===== modal-header ===== -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- ===== modal-body ===== -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <!-- ===== Image-gallery carousel ===== -->
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <!-- slides -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/imgs/best-seller/man1.jpg" class="d-block w-100" alt="man-1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/imgs/best-seller/man2.jpg" class="d-block w-100" alt="man-2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/imgs/best-seller/man3.jpg" class="d-block w-100" alt="man-3">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/imgs/best-seller/man4.jpg" class="d-block w-100" alt="man-4">
+                                    </div>
+                                </div>
+                                <!-- indicators -->
+                                <ol class="carousel-indicators position-relative">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                        <div class="data-slide-img">
+                                            <img src="assets/imgs/best-seller/man1.jpg" alt="man-1">
+                                        </div>
+                                    </li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                        <div class="data-slide-img">
+                                            <img src="assets/imgs/best-seller/man2.jpg" alt="man-2">
+                                        </div>
+                                    </li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                                        <div class="data-slide-img">
+                                            <img src="assets/imgs/best-seller/man3.jpg" alt="man-3">
+                                        </div>
+                                    </li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                                        <div class="data-slide-img">
+                                            <img src="assets/imgs/best-seller/man4.jpg" alt="man-4">
+                                        </div>
+                                    </li>
+                                </ol>
+                                <!-- nav buttons -->
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                    data-slide="prev">
+                                    <i class="flaticon-left-arrow-1 text-dark"></i>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                    data-slide="next">
+                                    <i class="flaticon-right-arrow-angle text-dark"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <!-- ===== Product info ===== -->
+                            <div class="product-info">
+                                <!-- top-info -->
+                                <div class="top-info">
+                                    <ul>
+                                        <li><span>SKU:</span> 001</li>
+                                        <li><span>Availability:</span> 40 in Stock</li>
+                                    </ul>
+                                </div>
+                                <!-- primary-info -->
+                                <div class="primary-info">
+                                    <h3 class="title">Ocean Wash Linen Sport Shirt</h3>
+                                    <p class="price">$220.00</p>
+                                    <div class="rating d-flex justify-content-between align-items-center">
+                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star-1"></i>
+                                    </div>
+                                    <p class="text-muted description">
+                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam.
+                                    </p>
+                                </div>
+                                <!-- add-to-cart -->
+                                <div class="add-to-cart d-flex">
+                                    <div class="quantity-area d-flex align-items-center">
+                                        <button type="button" class="minus-btn" disabled>−</button>
+                                        <input type="text" class="quantity-value" size="2" value="1"/>
+                                        <button type="button" class="plus-btn">+</button>
+                                    </div>
+                                    <div class="add-to-cart-btn">
+                                        <button type="button" class="d-flex primary-color">
+                                            <i class="flaticon-shopping-bag mr-2"></i>
+                                            <p>Add To Cart</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= QUICK VIEW (MODAL) - End ======= -->
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

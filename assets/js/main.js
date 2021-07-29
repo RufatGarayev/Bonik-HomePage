@@ -57,7 +57,41 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 100);
   });
 
-  // $('#loginModal').modal('show');
+  // ======= Increasing or decreasing the quantity input value ======= //
+  let quantityInput = $('#quickViewModal input[type="text"]');
+  let currentVal = parseInt(quantityInput.val());
+
+  // decrease action
+  $(document).on("click", "#quickViewModal .minus-btn", function () {
+    if (!isNaN(currentVal)) {
+      quantityInput.val(currentVal -= 1);
+      $("#quickViewModal .plus-btn").prop("disabled", false);
+      $("#quickViewModal .plus-btn").css("cursor", "pointer");
+    }
+
+    if(currentVal === 1){
+      $(this).prop("disabled", true);
+      $(this).css("cursor", "default");
+    }else{
+      $(this).prop("disabled", false);
+    }
+  });
+
+  // increase action
+  $(document).on("click", "#quickViewModal .plus-btn", function () {
+    if (!isNaN(currentVal)) {
+      quantityInput.val(currentVal += 1);
+      $("#quickViewModal .minus-btn").prop("disabled", false);
+      $("#quickViewModal .minus-btn").css("cursor", "pointer");
+    }
+
+    if(currentVal === 100){
+      $(this).prop("disabled", true);
+      $(this).css("cursor", "default");
+    }else{
+      $(this).prop("disabled", false);
+    }
+  });
 
   // ======= Countdown ======= //
   $(".countdown-active").countdown("2022/05/01", function (e) {
@@ -148,6 +182,20 @@ $(document).ready(function () {
       // when there is no error
       unhighlight: function (element) {
         $(element).css("border", "2px solid green");
+      }
+    });
+  });
+
+  // ======= Subscribe Validation ======= //
+  $(function () {
+    // rules 
+    $("#subscribe-form").validate({
+      rules: {
+        subscribeEmail: {
+          required: true,
+          minlength: 12,
+          email: true
+        }
       }
     });
   });

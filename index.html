@@ -153,10 +153,10 @@
                             </li>
                             <!-- cart -->
                             <li>
-                                <a href="#">
+                                <a href="#" class="cart-btn">
                                     <i class="flaticon-shopping-bag"></i>
                                 </a>
-                                <sup class="primary-color">0</sup>
+                                <sup class="primary-color cart-sup">0</sup>
                                 <div class="action-tooltip">
                                     Cart
                                 </div>
@@ -200,7 +200,7 @@
                                 <!-- categories-dropdown -->
                                 <div class="categories-dropdown">
                                     <ul class="categories-ul">
-                                        <li>
+                                        <li class="has-submenu">
                                             <!-- li-content -->
                                             <div class="li-content d-flex justify-content-between">
                                                 <div class="left-content d-flex">
@@ -277,7 +277,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li class="has-submenu">
                                             <!-- li-content -->
                                             <div class="li-content d-flex justify-content-between">
                                                 <div class="left-content d-flex">
@@ -477,10 +477,10 @@
                                 </li>
                                 <!-- cart -->
                                 <li>
-                                    <a href="#">
+                                    <a href="#" class="cart-btn">
                                         <i class="flaticon-shopping-bag"></i>
                                     </a>
-                                    <sup class="primary-color">0</sup>
+                                    <sup class="primary-color cart-sup">0</sup>
                                     <div class="action-tooltip">
                                         Cart
                                     </div>
@@ -1536,12 +1536,6 @@
     </footer>
     <!-- ======= FOOTER - End ======= -->
 
-    <!-- ======= BACK TO TOP BTN - Start ======= -->
-    <button type="button" id="back-to-top-btn">
-        <i class="flaticon-up-arrow-angle"></i>
-    </button>
-    <!-- ======= BACK TO TOP BTN - End ======= -->
-
     <!-- ======= LOGIN FORM (MODAL) - Start ======= -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -1699,17 +1693,22 @@
                                 </div>
                                 <!-- add-to-cart -->
                                 <div class="add-to-cart d-flex">
-                                    <div class="quantity-area d-flex align-items-center">
-                                        <button type="button" class="minus-btn" disabled>−</button>
-                                        <input type="text" class="quantity-value" size="2" value="1"/>
-                                        <button type="button" class="plus-btn">+</button>
-                                    </div>
-                                    <div class="add-to-cart-btn">
-                                        <button type="button" class="d-flex primary-color">
-                                            <i class="flaticon-shopping-bag mr-2"></i>
-                                            <p>Add To Cart</p>
-                                        </button>
-                                    </div>
+                                    <form id="quantity-input-form" class="d-flex w-100">
+                                        <div class="quantity-area d-flex align-items-center">
+                                            <button type="button" class="minus-btn" disabled>−</button>
+                                            <div class="quantity-input-wrapper d-flex flex-column position-relative">
+                                                <input type="text" name="quantityValue" class="quantity-value" size="2"
+                                                    value="1" />
+                                            </div>
+                                            <button type="button" class="plus-btn">+</button>
+                                        </div>
+                                        <div class="add-to-cart-btn">
+                                            <button type="button" class="d-flex primary-color">
+                                                <i class="flaticon-shopping-bag mr-2"></i>
+                                                <p>Add To Cart</p>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1719,6 +1718,108 @@
         </div>
     </div>
     <!-- ======= QUICK VIEW (MODAL) - End ======= -->
+
+    <!-- ======= SIDEBAR CART - Start ======= -->
+    <div id="sidebar-cart">
+        <div class="sidebar-cart-wrapper h-100">
+            <div class="sidebar-cart-area d-flex flex-column justify-content-between">
+                <!-- ===== Cart header ===== -->
+                <div class="cart-header d-flex justify-content-between">
+                    <div class="item-count d-flex">
+                        <i class="flaticon-shopping-bag mr-2"></i>
+                        <p>3 item</p>
+                    </div>
+                    <div class="close-btn">
+                        <button type="button" class="text-danger">Close</button>
+                    </div>
+                </div>
+                <!-- ===== Cart body ===== -->
+                <div class="cart-body">
+                    <!-- product-item -->
+                    <div class="product-item d-flex align-items-center justify-content-between">
+                        <!-- img -->
+                        <div class="product-img">
+                            <img src="assets/imgs/new-arrivals/SonyTV1080p.png" alt="SonyTV1080p">
+                        </div>
+                        <!-- info -->
+                        <div class="product-info w-100">
+                            <a href="#">Sony TV 1080p</a>
+                            <p class="text-muted product-count-and-price">
+                                <span class="product-total-price">$570.80</span>
+                                <span className="multiplication">×</span>
+                                <span class="product-count">1</span>
+                            </p>
+                            <p class="product-price">$570.80</p>
+                        </div>
+                        <!-- remove-btn -->
+                        <div class="remove-btn">
+                            <button type="button">✕</button>
+                        </div>
+                    </div>
+                    <!-- product-item -->
+                    <div class="product-item d-flex align-items-center justify-content-between">
+                        <!-- img -->
+                        <div class="product-img">
+                            <img src="assets/imgs/new-arrivals/SonyPS4.png" alt="SonyPS4">
+                        </div>
+                        <!-- info -->
+                        <div class="product-info w-100">
+                            <a href="#">Sony PS4</a>
+                            <p class="text-muted product-count-and-price">
+                                <span class="product-total-price">$460.99</span>
+                                <span className="multiplication">×</span>
+                                <span class="product-count">1</span>
+                            </p>
+                            <p class="product-price">$460.99</p>
+                        </div>
+                        <!-- remove-btn -->
+                        <div class="remove-btn">
+                            <button type="button">✕</button>
+                        </div>
+                    </div>
+                    <!-- product-item -->
+                    <div class="product-item d-flex align-items-center justify-content-between">
+                        <!-- img -->
+                        <div class="product-img">
+                            <img src="assets/imgs/new-arrivals/beatsw3.png" alt="beatsw3">
+                        </div>
+                        <!-- info -->
+                        <div class="product-info w-100">
+                            <a href="#">Beats W3</a>
+                            <p class="text-muted product-count-and-price">
+                                <span class="product-total-price">$150.99</span>
+                                <span className="multiplication">×</span>
+                                <span class="product-count">1</span>
+                            </p>
+                            <p class="product-price">$150.99</p>
+                        </div>
+                        <!-- remove-btn -->
+                        <div class="remove-btn">
+                            <button type="button">✕</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===== Cart footer ===== -->
+                <div class="cart-footer">
+                    <button type="button"
+                        class="checkout-btn d-flex justify-content-center primary-color text-white btn-block">
+                        <p class="mr-2">Checkout Now</p>
+                        <span>($1182.78)</span>
+                    </button>
+                    <button type="button" class="view-cart-btn mt-3 btn-block">View Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= SIDEBAR CART - End ======= -->
+
+    <!-- ======= Back to top btn ======= -->
+    <button type="button" id="back-to-top-btn">
+        <i class="flaticon-up-arrow-angle"></i>
+    </button>
+
+    <!-- ======= Fullscreen dark bg-color ======= -->
+    <div class="dark-bg-color"></div>
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

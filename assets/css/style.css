@@ -142,7 +142,7 @@ img {
 }
 
 /* ======= Dark bg-color ======= */
-.dark-bg-color{
+.dark-bg-color {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.55);
   position: fixed;
@@ -172,7 +172,6 @@ img {
 #back-to-top-btn:hover {
   background-color: #ce3952;
 }
-
 
 /* ==============================
              HEADER
@@ -807,6 +806,11 @@ header .actions li:hover .action-tooltip {
   transition: all 0.3s ease;
 }
 
+.clicked-actions-btn {
+  background-color: #e94560 !important;
+  color: #fff !important;
+}
+
 #best-seller .item-top .actions button:hover {
   background-color: #e94560;
   color: #fff;
@@ -823,13 +827,14 @@ header .actions li:hover .action-tooltip {
   right: 68px;
   font-size: 12px;
   padding: 3px 7px;
+  width: auto;
+  white-space: nowrap;
   border-radius: 5px;
   line-height: 19px;
   transition: all 0.2s ease;
   opacity: 0;
   visibility: hidden;
   text-align: center;
-  min-width: 111px;
   box-shadow: 0 0 7px -2px rgb(161, 159, 159);
 }
 
@@ -928,8 +933,16 @@ header .actions li:hover .action-tooltip {
   padding: 5px 0 20px;
 }
 
-#best-seller .price span {
+#best-seller .price p,
+span {
   font-weight: 600;
+}
+
+#best-seller .price span {
+  line-height: 20px;
+}
+
+#best-seller .price p {
   margin-right: 5px;
 }
 
@@ -1335,7 +1348,6 @@ footer .social-media i::before {
   font-size: 12px;
 }
 
-
 /* ==============================
         LOGIN FORM (MODAL)
 ============================== */
@@ -1467,8 +1479,8 @@ input[type="password"] {
   left: 0;
 }
 
-#quickViewModal .top-info li {
-  font-weight: 300;
+#quickViewModal .top-info li, li span {
+  font-weight: 400;
   font-size: 13px;
 }
 
@@ -1485,10 +1497,18 @@ input[type="password"] {
 }
 
 #quickViewModal .primary-info .price {
-  font-size: 20px;
   font-weight: 600;
   color: #e94560;
-  margin: 10px 0;
+  padding: 10px 0;
+}
+
+#quickViewModal .primary-info .price p {
+  font-size: 20px;
+}
+
+#quickViewModal .primary-info .price span {
+  font-size: 22px !important;
+  line-height: 31px;
 }
 
 #quickViewModal .primary-info .rating {
@@ -1555,13 +1575,13 @@ input[type="password"] {
   color: #191919;
 }
 
-#quickViewModal .add-to-cart .add-to-cart-btn button {
+#quickViewModal .add-to-cart .quickView-add-to-cart-btn button {
   padding: 9px 36px;
   border-radius: 5px;
   color: #fff;
 }
 
-#quickViewModal .add-to-cart .add-to-cart-btn button:hover {
+#quickViewModal .add-to-cart .quickView-add-to-cart-btn button:hover {
   background-color: #ce3952;
 }
 
@@ -1579,7 +1599,7 @@ input[type="password"] {
   z-index: 999999;
 }
 
-.show-sidebarCart{
+.show-sidebarCart {
   transform: translateX(-399px) !important;
 }
 
@@ -1607,14 +1627,15 @@ input[type="password"] {
   font-size: 20px;
 }
 
-#sidebar-cart .cart-header p {
+#sidebar-cart .cart-header p,
+span {
   font-weight: 600;
   font-size: 17px;
 }
 
 #sidebar-cart .cart-header button:hover {
   color: #000 !important;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 #sidebar-cart .cart-body {
@@ -1628,7 +1649,7 @@ input[type="password"] {
 }
 
 #sidebar-cart .product-item .product-img {
-  height: 90px;
+  width: 80px;
 }
 
 #sidebar-cart .product-item .product-info {
@@ -1646,13 +1667,18 @@ input[type="password"] {
   font-size: 10px;
 }
 
-#sidebar-cart .product-price {
+#sidebar-cart .product-total-price {
   font-weight: 600;
   margin-top: 3px;
 }
 
 #sidebar-cart .cart-footer {
   padding: 40px 20px 30px;
+}
+
+#sidebar-cart .cart-footer span {
+  font-weight: normal;
+  font-size: 14px;
 }
 
 #sidebar-cart .cart-footer button {

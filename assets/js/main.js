@@ -67,7 +67,7 @@ $(document).ready(function () {
 
   // ======= Increasing or decreasing the quantity input value ======= //
   let quantityInput = $('#quickViewModal input[type="text"]');
-  let currentVal = parseInt(quantityInput.val());
+  let currentVal = parseInt($(quantityInput).val());
 
   // decrease action
   $(document).on("click", "#quickViewModal .minus-btn", function () {
@@ -93,7 +93,7 @@ $(document).ready(function () {
       $("#quickViewModal .minus-btn").css("cursor", "pointer");
     }
 
-    if (currentVal === 100) {
+    if (currentVal === 10) {
       $(this).prop("disabled", true);
       $(this).css("cursor", "default");
     } else {
@@ -101,8 +101,177 @@ $(document).ready(function () {
     }
   });
 
+  // ======= Product actions ======= //
+  $(document).on("click", "#best-seller .product-action-btn", function () {
+    $(this).toggleClass("clicked-actions-btn");
+  });
+
+  // wishlist btn
+  $(document).on("click", "#best-seller .wishlist-btn", function () {
+    if ($(this).hasClass("clicked-actions-btn")) {
+      $(this).next().text("Remove From Wishlist");
+    } else {
+      $(this).next().text("Add To Wishlist");
+    }
+  });
+
+  // compare btn
+  $(document).on("click", "#best-seller .compare-btn", function () {
+    if ($(this).hasClass("clicked-actions-btn")) {
+      $(this).next().text("Remove From Compare");
+    } else {
+      $(this).next().text("Add To Compare");
+    }
+  });
+
+
+  // ========= SHOPPING CART ========= //
+  let cartBody = $("#sidebar-cart .cart-body");
+
+  createProduct();
+
+  $(document).on("click", ".add-to-cart-btn button", function () {
+    let id = $(this).closest(".item").attr("data-id");
+    let title = $(this).closest(".add-to-cart-btn").siblings(".title").children("a").text();
+    let price = parseFloat($(this).closest(".add-to-cart-btn").siblings(".price").children("p").text());
+    let image = $(this).closest(".item-bottom").prev().children(".img1").children().attr("src");
+
+    if (localStorage.getItem("product") == null) {
+      localStorage.setItem("product", JSON.stringify([]));
+    }
+
+    let cart = JSON.parse(localStorage.getItem("product"));
+    let existProduct = cart.find(p => p.id == id);
+
+    if (existProduct === undefined) {
+      cart.push({
+        id: id,
+        img: image,
+        title: title,
+        price: price,
+        count: 1
+      })
+    } else {
+      existProduct.count += 1;
+    }
+
+    localStorage.setItem("product", JSON.stringify(cart));
+
+    getProductCount();
+    getCartTotal();
+    createProduct();
+  });
+
+  // getting product count
+  function getProductCount() {
+    let cartArr = JSON.parse(localStorage.getItem("product"));
+    $("header .cart-sup").text(cartArr.length);
+    $("#sidebar-cart .cart-header .product-count").text(cartArr.length);
+  };
+
+  getProductCount();
+
+  // creating product
+  function createProduct() {
+    if (localStorage.getItem("product") == null) {
+      localStorage.setItem("product", JSON.stringify([]));
+    }
+
+    let cart = JSON.parse(localStorage.getItem("product"));
+    let newProductItem = "";
+
+    cart.forEach(item => {
+      newProductItem +=
+        `<div class="product-item d-flex align-items-center justify-content-between">
+          <div class="product-img">
+            <img src=${item.img} alt="SonyTV1080p">
+          </div>
+          <div class="product-info w-100">
+            <a href="#">${item.title}</a>
+            <p class="text-muted product-count-and-price">
+              <span class="product-price">$${(item.price).toFixed(2)}</span>
+              <span className="multiplication">×</span>
+              <span class="product-count">${item.count}</span>
+            </p>
+            <p class="product-total-price">$${(item.count * item.price).toFixed(2)}</p>
+          </div>
+          <div class="remove-btn">
+            <button onclick="removeProduct(${item.id})" type="button">✕</button>
+          </div>
+        </div>`
+    });
+
+    cartBody.html(newProductItem);
+  };
+
+  // getting cart total price
+  function getCartTotal() {
+    let cartArr = JSON.parse(localStorage.getItem("product"));
+    let cartTotal = $("#sidebar-cart .cart-total");
+    let productTotalPrice = 0;
+    let cartTotalPrice = 0;
+
+    cartArr.forEach(item => {
+      productTotalPrice = item.count * item.price
+      cartTotalPrice += productTotalPrice;
+      cartTotal.text(`($${cartTotalPrice.toFixed(2)})`);
+    });
+  };
+
+  // removing product
+  function removeProduct(id) {
+    if (localStorage.getItem("product") == null) {
+      localStorage.setItem("product", JSON.stringify([]));
+    }
+
+    let cart = JSON.parse(localStorage.getItem("product"));
+
+    cart.splice(id, 1);
+    localStorage.setItem("product", JSON.stringify(cart));
+
+    getCartTotal();
+    createProduct();
+  };
+
+  // ======= ADD TO CART (QUICK VIEW PRODUCT) ======= //
+  $(document).on("submit", ".add-to-cart #quantity-input-form", function (e) {
+    e.preventDefault();
+
+    let id = $(this).closest(".item").attr("data-id");
+    let title = $(this).closest(".add-to-cart").siblings(".primary-info").children(".title").text();
+    let price = parseFloat($(this).closest(".add-to-cart").siblings(".primary-info").children(".price").find("p").text());
+    let image = $(this).closest(".modal-body").find(".first-img").children("img").attr("src");
+    let quantityInputVal = parseInt($('#quickViewModal input[type="text"]').val());
+
+    if (localStorage.getItem("product") == null) {
+      localStorage.setItem("product", JSON.stringify([]));
+    }
+
+    let cart = JSON.parse(localStorage.getItem("product"));
+    let existProduct = cart.find(p => p.id == id);
+
+    if (existProduct === undefined) {
+      cart.push({
+        id: id,
+        img: image,
+        title: title,
+        price: price,
+        count: quantityInputVal
+      })
+    } else {
+      existProduct.count += quantityInputVal;
+    }
+
+    localStorage.setItem("product", JSON.stringify(cart));
+
+    getProductCount();
+    getCartTotal();
+    createProduct();
+  });
+
+
   // ======= Countdown ======= //
-  $(".countdown-active").countdown("2022/05/01", function (e) {
+  $(".countdown-active").countdown("2023/01/01", function (e) {
     $(this).html(e.strftime(
       `<div class="single-countdown">
             <h2>%D</h2>
@@ -146,7 +315,6 @@ $(document).ready(function () {
       $('body,html').css('overflow', 'visible');
     }
   });
-
 
   // ======= Owl-Carousel for Best Seller section ======= //
   $(".best-seller-carousel").owlCarousel({
@@ -239,7 +407,7 @@ $(document).ready(function () {
         quantityValue: {
           required: true,
           digits: true,
-          max: 100
+          max: 10
         }
       },
 
@@ -252,6 +420,15 @@ $(document).ready(function () {
       unhighlight: function (element) {
         $(element).css("border", "2px solid green");
       }
+    });
+  });
+
+  // ======= Growl Notification ======= //
+  $(document).on("click", ".add-to-cart-btn button", function () {
+    $.toast({
+      heading: 'Success',
+      text: 'Product added to the cart.',
+      icon: 'success'
     });
   });
 });

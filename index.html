@@ -24,7 +24,7 @@
     <!-- style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- title -->
-    <title>Bonik | Home</title>
+    <title>Bonik - Home</title>
 </head>
 
 <body>
@@ -113,66 +113,68 @@
         </div>
         <!-- ===== header-middle ===== -->
         <div class="header-middle">
-            <div class="container">
-                <div class="header-middle-content d-flex justify-content-between align-items-center">
-                    <!-- ===== brand ===== -->
-                    <div class="brand">
-                        <a href="#">
-                            <img src="assets/imgs/brand/logo.svg" alt="logo">
-                        </a>
-                    </div>
-                    <!-- ===== search ===== -->
-                    <div class="search">
-                        <form action="javascript:void(0)">
-                            <button type="submit" class="text-muted">
-                                <i class="flaticon-loupe"></i>
-                            </button>
-                            <input type="text" id="search-input" placeholder="Search Products...">
-                        </form>
-                    </div>
-                    <!-- ===== actions ===== -->
-                    <div class="actions">
-                        <ul class="d-flex justify-content-between align-items-center">
-                            <!-- compare -->
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-balance"></i>
-                                </a>
-                                <sup class="primary-color">0</sup>
-                                <div class="action-tooltip">
-                                    Compare
-                                </div>
-                            </li>
-                            <!-- wishlist -->
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-heart"></i>
-                                </a>
-                                <sup class="primary-color">0</sup>
-                                <div class="action-tooltip">
-                                    Wishlist
-                                </div>
-                            </li>
-                            <!-- cart -->
-                            <li>
-                                <a href="#" class="cart-btn">
-                                    <i class="flaticon-shopping-bag"></i>
-                                </a>
-                                <sup class="primary-color cart-sup">0</sup>
-                                <div class="action-tooltip">
-                                    Cart
-                                </div>
-                            </li>
-                            <!-- account -->
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#loginModal">
-                                    <i class="flaticon-user-symbol-of-thin-outline"></i>
-                                </a>
-                                <div class="action-tooltip">
-                                    Account
-                                </div>
-                            </li>
-                        </ul>
+            <div class="header-middle-wrapper">
+                <div class="container">
+                    <div class="header-middle-content d-flex justify-content-between align-items-center">
+                        <!-- ===== brand ===== -->
+                        <div class="brand">
+                            <a href="#">
+                                <img src="assets/imgs/brand/logo.svg" alt="logo">
+                            </a>
+                        </div>
+                        <!-- ===== search ===== -->
+                        <div class="search">
+                            <form action="javascript:void(0)">
+                                <button type="submit" class="text-muted">
+                                    <i class="flaticon-loupe"></i>
+                                </button>
+                                <input type="text" id="search-input" placeholder="Search Products...">
+                            </form>
+                        </div>
+                        <!-- ===== actions ===== -->
+                        <div class="actions">
+                            <ul class="d-flex justify-content-between align-items-center">
+                                <!-- compare -->
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-balance"></i>
+                                    </a>
+                                    <sup class="primary-color">0</sup>
+                                    <div class="action-tooltip">
+                                        Compare
+                                    </div>
+                                </li>
+                                <!-- wishlist -->
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-heart"></i>
+                                    </a>
+                                    <sup class="primary-color">0</sup>
+                                    <div class="action-tooltip">
+                                        Wishlist
+                                    </div>
+                                </li>
+                                <!-- cart -->
+                                <li>
+                                    <a href="#" class="cart-btn">
+                                        <i class="flaticon-shopping-bag"></i>
+                                    </a>
+                                    <sup class="primary-color cart-sup">0</sup>
+                                    <div class="action-tooltip">
+                                        Cart
+                                    </div>
+                                </li>
+                                <!-- account -->
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                                        <i class="flaticon-user-symbol-of-thin-outline"></i>
+                                    </a>
+                                    <div class="action-tooltip">
+                                        Account
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,6 +203,12 @@
                                 </div>
                                 <!-- categories-dropdown -->
                                 <div class="categories-dropdown">
+                                    <div class="categories-header sidebar-menu-header">
+                                        <button type="button" class="d-flex align-items-center">
+                                            <span class="mr-2">✖</span>
+                                            <p>Close</p>
+                                        </button>
+                                    </div>
                                     <ul class="categories-ul">
                                         <li class="has-submenu">
                                             <!-- li-content -->
@@ -214,13 +222,20 @@
                                                 </div>
                                             </div>
                                             <!-- submenu -->
-                                            <div
-                                                class="submenu submenu-women d-flex justify-content-center align-items-center">
+                                            <div class="submenu submenu-women">
+                                                <button type="button" class="d-none back-btn">
+                                                    <span class="mr-2">﹤</span>
+                                                    <p>Back</p>
+                                                </button>
                                                 <div class="row w-100">
                                                     <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-lg-4">
                                                                 <!-- submenu-tops -->
+                                                                <button type="button" class="d-none submenu-btn tops">
+                                                                    <p>TOPS</p>
+                                                                    <i class="flaticon-right-arrow-angle"></i>
+                                                                </button>
                                                                 <div class="submenu-tops wrapper">
                                                                     <h6>TOPS</h6>
                                                                     <ul>
@@ -236,6 +251,10 @@
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <!-- submenu-bottoms -->
+                                                                <button type="button" class="d-none submenu-btn bottoms">
+                                                                    <p>BOTTOMS</p>
+                                                                    <i class="flaticon-right-arrow-angle"></i>
+                                                                </button>
                                                                 <div class="submenu-bottoms wrapper">
                                                                     <h6>BOTTOMS</h6>
                                                                     <ul>
@@ -249,7 +268,11 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                <!-- submenu-tops -->
+                                                                <!-- submenu-accessories -->
+                                                                <button type="button" class="d-none submenu-btn accessories">
+                                                                    <p>ACCESSORIES</p>
+                                                                    <i class="flaticon-right-arrow-angle"></i>
+                                                                </button>
                                                                 <div class="submenu-accessories wrapper">
                                                                     <h6>ACCESSORIES</h6>
                                                                     <ul>
@@ -279,7 +302,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="has-submenu">
+                                        <li class="has-submenu d-none">
                                             <!-- li-content -->
                                             <div class="li-content d-flex justify-content-between">
                                                 <div class="left-content d-flex">
@@ -298,6 +321,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-4">
                                                                 <!-- submenu-tops -->
+                                                                <a href="#" class="d-none submenu-link tops">TOPS</a>
                                                                 <div class="submenu-tops wrapper">
                                                                     <h6>TOPS</h6>
                                                                     <div class="man-img">
@@ -317,6 +341,7 @@
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <!-- submenu-bottoms -->
+                                                                <a href="#" class="d-none submenu-link bottoms">BOTTOMS</a>
                                                                 <div class="submenu-bottoms wrapper">
                                                                     <h6>BOTTOMS</h6>
                                                                     <div class="man-img">
@@ -333,7 +358,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                <!-- submenu-tops -->
+                                                                <!-- submenu-accessories -->
+                                                                <a href="#" class="d-none submenu-link accessories">ACCESSORIES</a>
                                                                 <div class="submenu-accessories wrapper">
                                                                     <h6>ACCESSORIES</h6>
                                                                     <div class="man-img">
@@ -433,7 +459,13 @@
                         </div>
                         <!-- ===== nav-links ===== -->
                         <div class="nav-links">
-                            <ul class="d-flex justify-content-between align-items-center">
+                            <div class="nav-menu-header sidebar-menu-header">
+                                <button type="button" class="d-flex align-items-center">
+                                    <span class="mr-2">✖</span>
+                                    <p>Close</p>
+                                </button>
+                            </div>
+                            <ul class="d-flex">
                                 <li>
                                     <a href="#">Home</a>
                                 </li>
@@ -662,11 +694,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
                                         <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -735,11 +767,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
                                         <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -805,11 +837,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -878,11 +910,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
                                         <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -948,11 +980,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
                                         <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -1017,11 +1049,11 @@
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
                                         <i class="flaticon-star-1"></i>
                                         <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star-1"></i>
+                                        <i class="flaticon-star"></i>
+                                        <i class="flaticon-star"></i>
                                     </span>
                                 </div>
                                 <div class="title">
@@ -1436,106 +1468,142 @@
 
     <!-- ======= FOOTER - Start ======= -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <!-- ===== Description ===== -->
-                    <div class="description-item">
-                        <!-- brand -->
-                        <div class="brand">
-                            <a href="#">
-                                <img src="assets/imgs/brand/logo.svg" alt="logo">
-                            </a>
-                        </div>
-                        <!-- description -->
-                        <div class="description">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus.
-                                Erat et lectus vel ut sollicitudin elit at amet.
-                            </p>
-                        </div>
-                        <!-- store-wrapper -->
-                        <div class="store-wrapper d-flex">
-                            <!-- store-item -->
-                            <div class="store-item google-play">
-                                <a href="#" class="d-flex justify-content-between align-items-center">
-                                    <div class="img">
-                                        <img src="assets/imgs/footer/google-play.png" alt="google-play">
-                                    </div>
-                                    <div class="text">
-                                        <p>Get it on</p>
-                                        <h6>Google Play</h6>
-                                    </div>
+        <!-- ===== footer-top ===== -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!-- ===== Description ===== -->
+                        <div class="description-item">
+                            <!-- brand -->
+                            <div class="brand">
+                                <a href="#">
+                                    <img src="assets/imgs/brand/logo.svg" alt="logo">
                                 </a>
                             </div>
-                            <!-- store-item -->
-                            <div class="store-item app-store">
-                                <a href="#" class="d-flex justify-content-between align-items-center">
-                                    <div class="img">
-                                        <img src="assets/imgs/footer/app-store.png" alt="app-store">
-                                    </div>
-                                    <div class="text">
-                                        <p>Download on the</p>
-                                        <h6>App Store</h6>
-                                    </div>
-                                </a>
+                            <!-- description -->
+                            <div class="description">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus.
+                                    Erat et lectus vel ut sollicitudin elit at amet.
+                                </p>
+                            </div>
+                            <!-- store-wrapper -->
+                            <div class="store-wrapper d-flex">
+                                <!-- store-item -->
+                                <div class="store-item google-play">
+                                    <a href="#" class="d-flex justify-content-between align-items-center">
+                                        <div class="img">
+                                            <img src="assets/imgs/footer/google-play.png" alt="google-play">
+                                        </div>
+                                        <div class="text">
+                                            <p>Get it on</p>
+                                            <h6>Google Play</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- store-item -->
+                                <div class="store-item app-store">
+                                    <a href="#" class="d-flex justify-content-between align-items-center">
+                                        <div class="img">
+                                            <img src="assets/imgs/footer/app-store.png" alt="app-store">
+                                        </div>
+                                        <div class="text">
+                                            <p>Download on the</p>
+                                            <h6>App Store</h6>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2">
-                    <!-- ===== About-us links ===== -->
-                    <div class="about-us-links links">
-                        <h2 class="text-white mb-4">About Us</h2>
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Our Stores</a></li>
-                            <li><a href="#">Our Cares</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <!-- ===== Customet-care links ===== -->
-                    <div class="customer-care-links links">
-                        <h2 class="text-white mb-4">Customer Care</h2>
-                        <ul>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">How to Buy</a></li>
-                            <li><a href="#">Track Your Order</a></li>
-                            <li><a href="#">Corporate & Bulk Purchasing</a></li>
-                            <li><a href="#">Returns & Refunds</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <!-- ===== Contact-us ===== -->
-                    <div class="contact-us">
-                        <!-- contact-top -->
-                        <div class="contact-top">
-                            <h2 class="text-white mb-4">Contact Us</h2>
-                            <p>70 Washington Square South, New York, NY 10012, United States</p>
-                            <p>Email: uilib.help@gmail.com</p>
-                            <p>Phone: +1 1123 456 780</p>
-                        </div>
-                        <!-- contact-bottom -->
-                        <div class="contact-bottom">
-                            <ul class="social-media d-flex justify-content-between align-items-center">
-                                <li>
-                                    <a href="#"><i class="flaticon-facebook-logo"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="flaticon-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="flaticon-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="flaticon-instagram"></i></a>
-                                </li>
+                    <div class="col-lg-2">
+                        <!-- ===== About-us links ===== -->
+                        <div class="about-us-links links">
+                            <h2 class="text-white mb-4">About Us</h2>
+                            <ul>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Our Stores</a></li>
+                                <li><a href="#">Our Cares</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- ===== Customet-care links ===== -->
+                        <div class="customer-care-links links">
+                            <h2 class="text-white mb-4">Customer Care</h2>
+                            <ul>
+                                <li><a href="#">Help Center</a></li>
+                                <li><a href="#">How to Buy</a></li>
+                                <li><a href="#">Track Your Order</a></li>
+                                <li><a href="#">Corporate & Bulk Purchasing</a></li>
+                                <li><a href="#">Returns & Refunds</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- ===== Contact-us ===== -->
+                        <div class="contact-us">
+                            <!-- contact-top -->
+                            <div class="contact-top">
+                                <h2 class="text-white mb-4">Contact Us</h2>
+                                <p>70 Washington Square South, New York, NY 10012, United States</p>
+                                <p>Email: uilib.help@gmail.com</p>
+                                <p>Phone: +1 1123 456 780</p>
+                            </div>
+                            <!-- contact-bottom -->
+                            <div class="contact-bottom">
+                                <ul class="social-media d-flex justify-content-between align-items-center">
+                                    <li>
+                                        <a href="#"><i class="flaticon-facebook-logo"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="flaticon-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="flaticon-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="flaticon-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ===== footer-bottom ===== -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- copyright -->
+                        <div class="copyright h-100 d-flex align-items-center">
+                            <p>© 2021 Bonik. Created by <a href="#">Rufat Garayev</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- payment-cards -->
+                        <div class="payment-cards d-flex">
+                            <div class="paypal payment-card">
+                                <img src="assets/imgs/payment/paypal.png" alt="paypal">
+                            </div>
+                            <div class="visa payment-card">
+                                <img src="assets/imgs/payment/visa.png" alt="visa">
+                            </div>
+                            <div class="master-card payment-card">
+                                <img src="assets/imgs/payment/master-card.png" alt="master-card">
+                            </div>
+                            <div class="skrill payment-card">
+                                <img src="assets/imgs/payment/skrill.png" alt="skrill">
+                            </div>
+                            <div class="cirrus payment-card">
+                                <img src="assets/imgs/payment/cirrus.png" alt="cirrus">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1749,16 +1817,45 @@
                 </div>
                 <!-- ===== Cart footer ===== -->
                 <div class="cart-footer">
-                    <button type="button" class="checkout-btn d-flex justify-content-center primary-color text-white btn-block">
+                    <button type="button"
+                        class="checkout-btn d-flex justify-content-center primary-color text-white btn-block">
                         <p class="mr-2">Checkout Now</p>
                         <span class="cart-total"></span>
                     </button>
                     <button type="button" class="view-cart-btn mt-3 btn-block">View Cart</button>
                 </div>
+                <!-- ===== No product ===== -->
+                <div class="no-product-wrapper h-100 flex-column justify-content-center align-items-center">
+                    <div class="no-product-img">
+                        <img src="assets/imgs/shopping-bag/shopping-bag.svg" alt="shopping-bag">
+                    </div>
+                    <p class="text-center mt-3">Your shopping cart is empty. Start shopping</p>
+                </div>
             </div>
         </div>
     </div>
     <!-- ======= SIDEBAR CART - End ======= -->
+
+    <!-- ======= Navigation list ======= -->
+    <div id="navigation-list">
+        <div class="navigation-list-content d-flex justify-content-between align-items-center">
+            <!-- menu -->
+            <button type="button" class="nav-menu-btn d-flex flex-column align-items-center">
+                <i class="flaticon-menu-1"></i>
+                <p>Menu</p>
+            </button>
+            <!-- categories -->
+            <button type="button" class="sidebar-categories-btn d-flex flex-column align-items-center">
+                <i class="flaticon-menu-2"></i>
+                <p>Categories</p>
+            </button>
+            <!-- search -->
+            <button type="button" class="categories d-flex flex-column align-items-center">
+                <i class="flaticon-loupe"></i>
+                <p>Search</p>
+            </button>
+        </div>
+    </div>
 
     <!-- ======= Back to top btn ======= -->
     <button type="button" id="back-to-top-btn">

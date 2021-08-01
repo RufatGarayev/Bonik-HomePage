@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?c2c2f0e8c258bb2527859a446a48e9f7") format("truetype"),
-url("./flaticon.woff?c2c2f0e8c258bb2527859a446a48e9f7") format("woff"),
-url("./flaticon.woff2?c2c2f0e8c258bb2527859a446a48e9f7") format("woff2"),
-url("./flaticon.eot?c2c2f0e8c258bb2527859a446a48e9f7#iefix") format("embedded-opentype"),
-url("./flaticon.svg?c2c2f0e8c258bb2527859a446a48e9f7#flaticon") format("svg");
+    src: url("./flaticon.ttf?eeb5e26d3d91380e6f8f982994bddce6") format("truetype"),
+url("./flaticon.woff?eeb5e26d3d91380e6f8f982994bddce6") format("woff"),
+url("./flaticon.woff2?eeb5e26d3d91380e6f8f982994bddce6") format("woff2"),
+url("./flaticon.eot?eeb5e26d3d91380e6f8f982994bddce6#iefix") format("embedded-opentype"),
+url("./flaticon.svg?eeb5e26d3d91380e6f8f982994bddce6#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -152,4 +152,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-linkedin:before {
     content: "\f12d";
+}
+.flaticon-menu-2:before {
+    content: "\f12e";
 }

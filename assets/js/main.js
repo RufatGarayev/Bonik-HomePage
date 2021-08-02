@@ -71,23 +71,36 @@ $(document).ready(function () {
   });
 
   // ======= Categories actions ======= //
-  $(function() {
-    $(document).on("click", ".header-bottom .has-submenu", function () {
-      $(this).closest(".categories-ul").css("transform", "translateX(-305px)");
-      $(this).closest(".categories-ul").siblings(".categories-header").css("transform", "translateX(-305px)");
+  if ($(window).width() < 992) {
+    $(".header-bottom .has-submenu").click(function () {
+      $(".header-bottom .categories-ul").removeClass("back-1").addClass("forward-1");
+      $(".header-bottom .categories-ul").prev(".categories-header").removeClass("back-1").addClass("forward-1");
+      $(this).children(".submenu").addClass("show-submenu");
     });
 
-    $(document).on("click", ".header-bottom .has-submenu .submenu-btn", function () {
-      $(this).closest("ul").addClass("forward-2");
-      $(this).closest("ul").siblings(".categories-header").addClass("forward-2");
+    $(".has-submenu .submenu-btn").click(function (e) {
+      e.stopPropagation()
+      $(".header-bottom .categories-ul").removeClass("forward-1 back-2 back-1").addClass("forward-2");
+      $(".header-bottom .categories-ul").prev(".categories-header").removeClass("forward-1 back-2 back-1").addClass("forward-2");
       $(this).next(".wrapper").show();
+      $(this).next(".wrapper").first("button").removeClass("d-none");
     });
 
-    // $(document).on("click", ".header-bottom .submenu .back-btn", function () {
-    //   $(this).parents(".categories-ul").css("transform", "translateX(0px)");
-    //   $(this).parents(".categories-ul").siblings(".categories-header").css("transform", "translateX(0px)");
-    // });
-  });
+    $(".header-bottom .back-btn-1").click(function (e) {
+      e.stopPropagation()
+      $(".header-bottom .categories-ul").removeClass("forward-1 back-2").addClass("back-1");
+      $(".header-bottom .categories-ul").siblings(".categories-header").removeClass("forward-1 back-2").addClass("back-1");
+      $(this).parent(".submenu").addClass("show-submenu");
+      $(this).closest(".has-submenu").siblings(".has-submenu").children(".submenu").removeClass("show-submenu");
+    });
+
+    $(".header-bottom .back-btn-2").click(function (e) {
+      e.stopPropagation()
+      $(".header-bottom .categories-ul").removeClass("forward-2").addClass("back-2");
+      $(".header-bottom .categories-ul").siblings(".categories-header").removeClass("forward-2").addClass("back-2");
+      $(this).parent(".wrapper").hide();
+    });
+  };
 
   // ======= Events On Scroll ======= //
   $(window).scroll(function () {
@@ -185,11 +198,11 @@ $(document).ready(function () {
 
 
   // ========= SHOPPING CART ========= //
-  let cartBody = $("#sidebar-cart .cart-body");
+  let cartBody = document.querySelector("#sidebar-cart .cart-body");
 
   createProduct();
 
-  $(document).on("click", ".add-to-cart-btn button", function () {
+  $(".add-to-cart-btn button").click(function () {
     let id = $(this).closest(".item").attr("data-id");
     let title = $(this).closest(".add-to-cart-btn").siblings(".title").children("a").text();
     let price = parseFloat($(this).closest(".add-to-cart-btn").siblings(".price").children("p").text());
@@ -212,11 +225,11 @@ $(document).ready(function () {
 
     localStorage.setItem("product", JSON.stringify(cart));
 
+    createProduct();
     getCartTotal();
     getProductCount();
-    createProduct();
 
-    // Growl Notification
+    // growl Notification
     $.toast({
       heading: 'Success',
       text: 'Product added to the cart.',
@@ -227,18 +240,20 @@ $(document).ready(function () {
   // getting product count
   function getProductCount() {
     let cart = JSON.parse(localStorage.getItem("product"));
+    let cartFooter = document.querySelector("#sidebar-cart .cart-footer");
+    let noProduct = document.querySelector("#sidebar-cart .no-product-wrapper");
 
     $("header .cart-sup").text(cart.length);
     $("#sidebar-cart .cart-header .product-count").text(cart.length);
 
-    if (cart.length > 0) {
-      $("#sidebar-cart .cart-body").removeClass("d-none");
-      $("#sidebar-cart .cart-footer").removeClass("d-none");
-      $("#sidebar-cart .no-product-wrapper").addClass("d-none");
+    if ($(cart).length > 0) {
+      cartBody.classList.remove("d-none");
+      cartFooter.classList.remove("d-none");
+      noProduct.classList.add("d-none");
     } else {
-      $("#sidebar-cart .cart-body").addClass("d-none");
-      $("#sidebar-cart .cart-footer").addClass("d-none");
-      $("#sidebar-cart .no-product-wrapper").addClass("d-flex");
+      cartBody.classList.add("d-none");
+      cartFooter.classList.add("d-none");
+      noProduct.classList.remove("d-none");
     }
   };
 
@@ -285,31 +300,35 @@ $(document).ready(function () {
             <p class="product-total-price">$${(item.count * item.price).toFixed(2)}</p>
           </div>
           <div class="remove-btn">
-            <button onclick="removeProduct(${item.id})" type="button">✕</button>
+            <button data-target-id=${item.id} class="remove-product" type="button">✕</button>
           </div>
         </div>`
     });
 
-    cartBody.html(newProductItem);
+    cartBody.innerHTML = newProductItem;
   };
 
   // removing product
-  function removeProduct(id) {
-    let cart = JSON.parse(localStorage.getItem("product"));
+  $("#sidebar-cart .cart-body").click(function (e) {
+    if (e.target.dataset.targetId) {
+      let id = e.target.dataset.targetId;
+      let cart = JSON.parse(localStorage.getItem("product"));
 
-    cart.splice(id, 1);
-    localStorage.setItem("product", JSON.stringify(cart));
+      cart.splice(id, 1);
 
-    $.toast({
-      heading: 'Error',
-      text: 'Product removed from the cart.',
-      icon: 'error'
-    });
+      localStorage.setItem("product", JSON.stringify(cart));
 
-    getProductCount();
-    getCartTotal();
-    createProduct();
-  };
+      getProductCount();
+      getCartTotal();
+      createProduct();
+
+      // growl Notification
+      $.toast({
+        heading: 'Removed',
+        text: 'Product removed from the cart.',
+      });
+    }
+  });
 
   // ======= ADD TO CART (QUICK VIEW PRODUCT) ======= //
   $(document).on("submit", ".add-to-cart #quantity-input-form", function (e) {

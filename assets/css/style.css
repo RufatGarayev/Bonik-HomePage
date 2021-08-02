@@ -11,7 +11,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 html {
@@ -185,14 +185,14 @@ img {
   box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
   position: fixed !important;
   top: 0 !important;
-  height: 80px;
+  height: 80px !important;
   z-index: 99999;
 }
 
 header {
   position: relative;
   box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
-  z-index: 9999;
+  z-index: 999;
 }
 
 /* ======= Header-Top ======= */
@@ -1807,7 +1807,7 @@ span {
     height: 100%;
     width: 300px;
     transition: all 0.3s ease;
-    z-index: 999999;
+    z-index: 99999;
   }
 
   .header-bottom .nav-links ul {
@@ -1816,6 +1816,10 @@ span {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  .header-bottom .nav-menu-header {
+    padding: 13px 16px 15px 30px !important;
   }
 
   .header-bottom .categories-dropdown {
@@ -1830,8 +1834,20 @@ span {
     transition: all 0.3s ease;
   }
 
+  .forward-1 {
+    transform: translateX(-305px);
+  }
+
   .forward-2 {
-    transform: translateX(-614px) !important;
+    transform: translateX(-614px);
+  }
+
+  .back-1 {
+    transform: translateX(0px);
+  }
+
+  .back-2 {
+    transform: translateX(-305px);
   }
 
   .header-bottom .categories-dropdown .submenu {
@@ -1846,9 +1862,14 @@ span {
     height: fit-content;
     opacity: 1;
     visibility: visible;
+    display: none;
     transition: all 0.3s ease;
     transform: translateX(-26px);
     z-index: 99;
+  }
+
+  .show-submenu {
+    display: flex !important;
   }
 
   .header-bottom .categories-dropdown .submenu .wrapper {
@@ -1864,7 +1885,8 @@ span {
     z-index: 99;
   }
 
-  .header-bottom .categories-dropdown .submenu .back-btn {
+  .header-bottom .categories-dropdown .submenu .back-btn,
+  .back-btn-2 {
     display: flex !important;
     align-items: center;
     position: absolute;
@@ -1875,12 +1897,16 @@ span {
     padding: 16px 30px;
     font-weight: 600;
     font-size: 14px;
+    border-bottom: 1px solid #e0e2e5;
   }
 
-  .header-bottom .categories-dropdown .submenu .back-btn span {
+  .header-bottom .categories-dropdown .submenu .back-btn i {
+    margin-top: 4px;
+  }
+
+  .header-bottom .categories-dropdown .submenu .back-btn i::before {
     font-size: 15px;
-    font-weight: 600;
-    line-height: 20px;
+    font-weight: 600 !important;
   }
 
   .header-bottom .categories-dropdown .submenu ul {
@@ -1905,8 +1931,8 @@ span {
 
   .header-bottom .sidebar-menu-header {
     display: block;
-    padding: 15px 16px 13px 30px;
-    border-bottom: 1px solid #f3f5f9;
+    padding: 9px 16px 15px 30px;
+    border-bottom: 1px solid #e0e2e5;
   }
 
   .header-bottom .sidebar-menu-header p {
@@ -1929,7 +1955,7 @@ span {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 99;
   }
 
   .navigation-list-content {

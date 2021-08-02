@@ -230,7 +230,7 @@ $(document).ready(function () {
     let cart = JSON.parse(localStorage.getItem("product"));
     let existProduct = cart.find(p => p.id == id);
 
-    if (existProduct === undefined && cart.length != 3) {
+    if (existProduct === undefined && cart.length != 100) {
       cart.push({
         id: id,
         img: image,
@@ -242,7 +242,7 @@ $(document).ready(function () {
       if (existProduct) existProduct.count += 1;
     }
 
-    if (existProduct === undefined && cart.length >= 3) {
+    if (existProduct === undefined && cart.length >= 100) {
       // warning growl notification
       $.toast({
         heading: 'Warning',
@@ -370,7 +370,7 @@ $(document).ready(function () {
     let cart = JSON.parse(localStorage.getItem("product"));
     let existProduct = cart.find(p => p.id == id);
 
-    if (existProduct === undefined && cart.length != 3) {
+    if (existProduct === undefined && cart.length != 100) {
       cart.push({
         id: id,
         img: image,
@@ -382,7 +382,7 @@ $(document).ready(function () {
       if (existProduct) existProduct.count += quantityInputVal;
     }
 
-    if (existProduct === undefined && cart.length >= 3) {
+    if (existProduct === undefined && cart.length >= 100) {
       // warning growl notification
       $.toast({
         heading: 'Warning',

@@ -33,9 +33,9 @@
         <!-- ===== header-top ===== -->
         <div class="header-top">
             <div class="container">
-                <div class="header-top-content d-flex justify-content-between">
+                <div class="header-top-content d-flex">
                     <!-- ===== header-top-left ===== -->
-                    <div class="header-top-left d-flex">
+                    <div class="header-top-left">
                         <div class="phone d-flex">
                             <i class="flaticon-phone-call"></i>
                             <p>+88012 3456 7894</p>
@@ -124,11 +124,13 @@
                         </div>
                         <!-- ===== search ===== -->
                         <div class="search">
+                            <div class="search-close-btn d-none">✕</div>
                             <form action="javascript:void(0)">
                                 <button type="submit" class="text-muted">
                                     <i class="flaticon-loupe"></i>
                                 </button>
-                                <input type="text" id="search-input" placeholder="Search Products...">
+                                <input type="text" id="search-input" spellcheck="false"
+                                    placeholder="Search Products...">
                             </form>
                         </div>
                         <!-- ===== actions ===== -->
@@ -231,13 +233,19 @@
                                                     <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-lg-4">
+                                                                <!-- women title and icon -->
+                                                                <div class="woman-icon pb-4 d-none">
+                                                                    <i class="flaticon-woman text-dark"></i>
+                                                                    <p class="text-dark ml-2">WOMEN</p>
+                                                                </div>
                                                                 <!-- submenu-tops -->
                                                                 <button type="button" class="d-none submenu-btn tops">
                                                                     <p>TOPS</p>
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-tops wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -261,7 +269,8 @@
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-bottoms wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -284,7 +293,8 @@
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-accessories wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -337,13 +347,19 @@
                                                     <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-lg-4">
+                                                                <!-- men title and icon -->
+                                                                <div class="man-icon pb-4 d-none">
+                                                                    <i class="flaticon-man text-dark"></i>
+                                                                    <p class="text-dark ml-2">MEN</p>
+                                                                </div>
                                                                 <!-- submenu-tops -->
                                                                 <button type="button" class="d-none submenu-btn tops">
                                                                     <p>TOPS</p>
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-tops wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -371,7 +387,8 @@
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-bottoms wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -397,7 +414,8 @@
                                                                     <i class="flaticon-right-arrow-angle"></i>
                                                                 </button>
                                                                 <div class="submenu-accessories wrapper">
-                                                                    <button type="button" class="d-none back-btn back-btn-2">
+                                                                    <button type="button"
+                                                                        class="d-none back-btn back-btn-2">
                                                                         <i class="flaticon-left-arrow mr-2"></i>
                                                                         <p>Back</p>
                                                                     </button>
@@ -581,7 +599,7 @@
     <main>
         <!-- ======= INTRO - Start ======= -->
         <section id="intro">
-            <div class="container-fluid">
+            <div class="container">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -803,7 +821,9 @@
                         </div>
                         <!-- item-bottom -->
                         <div class="item-bottom">
-                            <div class="countdown-active d-flex"></div>
+                            <div class="countdown-wrapper d-flex justify-content-center">
+                                <div class="countdown-active d-flex"></div>
+                            </div>
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
@@ -946,7 +966,9 @@
                         </div>
                         <!-- item-bottom -->
                         <div class="item-bottom">
-                            <div class="countdown-active d-flex"></div>
+                            <div class="countdown-wrapper d-flex justify-content-center">
+                                <div class="countdown-active d-flex"></div>
+                            </div>
                             <div class="item-content">
                                 <div class="rating">
                                     <span class="d-flex justify-content-between align-items-center">
@@ -1377,7 +1399,7 @@
         <section id="advantages">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <!-- ===== item ===== -->
                         <div class="item">
                             <!-- item-front -->
@@ -1400,7 +1422,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <!-- ===== item ===== -->
                         <div class="item">
                             <!-- item-front -->
@@ -1423,7 +1445,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <!-- ===== item ===== -->
                         <div class="item">
                             <!-- item-front -->
@@ -1446,7 +1468,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <!-- ===== item ===== -->
                         <div class="item">
                             <!-- item-front -->
@@ -1479,7 +1501,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <!-- ===== text =====  -->
+                        <!-- ===== text ===== -->
                         <div class="subscribe-text">
                             <h3>Newsletter</h3>
                             <p class="text-muted">
@@ -1493,7 +1515,8 @@
                         <div class="subscribe-form position-relative">
                             <form id="subscribe-form" class="d-flex w-100">
                                 <div class="form-group w-100">
-                                    <input type="text" name="subscribeEmail" placeholder="Email Address">
+                                    <input type="text" name="subscribeEmail" placeholder="Email Address"
+                                        spellcheck="false">
                                 </div>
                                 <input type="submit" value="Subscribe">
                             </form>
@@ -1620,13 +1643,13 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <!-- copyright -->
                         <div class="copyright h-100 d-flex align-items-center">
-                            <p>© 2021 Bonik. Created by <a href="#">Rufat Garayev</a></p>
+                            <p class="text-center">© 2021 Bonik. Created by <a href="#">Rufat Garayev</a></p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <!-- payment-cards -->
                         <div class="payment-cards d-flex">
                             <div class="paypal payment-card">
@@ -1673,11 +1696,11 @@
                         <form id="login-submit">
                             <div class="form-group">
                                 <input type="text" name="loginEmail" class="px-4" id="email1"
-                                    placeholder="Email Address">
+                                    placeholder="Email Address" spellcheck="false">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="loginPassword" class="px-4" id="password1"
-                                    placeholder="Password">
+                                    placeholder="Password" spellcheck="false">
                             </div>
                             <input type="submit" value="Login" class="text-white btn-block primary-color" />
                         </form>
@@ -1728,7 +1751,7 @@
                 <!-- ===== modal-body ===== -->
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 col-md-5 col-sm-5">
                             <!-- ===== Image-gallery carousel ===== -->
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <!-- slides -->
@@ -1780,7 +1803,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-7">
+                        <div class="col-lg-7 col-md-7 col-sm-7">
                             <!-- ===== Product info ===== -->
                             <div class="product-info item" data-id="1">
                                 <!-- top-info -->
@@ -1892,10 +1915,22 @@
                 <p>Categories</p>
             </button>
             <!-- search -->
-            <button type="button" class="categories d-flex flex-column align-items-center">
+            <button type="button" class="show-search-btn d-flex flex-column align-items-center">
                 <i class="flaticon-loupe"></i>
                 <p>Search</p>
             </button>
+        </div>
+    </div>
+
+    <!-- ======= Loader ======= -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 

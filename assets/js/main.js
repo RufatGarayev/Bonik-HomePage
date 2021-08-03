@@ -1,10 +1,10 @@
-$(document).ready(function () {
-  // ======= Reload ======= //
-  window.addEventListener("load", function () {
-    let preload = document.querySelector(".loader-wrapper");
-    preload.classList.add("loader-finish");
-  });
+// ======= Reload ======= //
+window.addEventListener("load", function () {
+  let preload = document.querySelector(".loader-wrapper");
+  preload.classList.add("loader-finish");
+});
 
+$(document).ready(function () {
   // ======= Dropdown actions ======= //
   $(".header-top .dropdown-top").click(function () {
     $(this).next().toggleClass("show-dropdown");

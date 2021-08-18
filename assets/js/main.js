@@ -215,197 +215,6 @@ $(document).ready(function () {
     }
   });
 
-
-  // =========== SHOPPING CART =========== //
-  let cartBody = document.querySelector("#sidebar-cart .cart-body");
-
-  createProduct();
-
-  $(".add-to-cart-btn button").click(function () {
-    let id = $(this).closest(".item").attr("data-id");
-    let title = $(this).closest(".add-to-cart-btn").siblings(".title").children("a").text();
-    let price = parseFloat($(this).closest(".add-to-cart-btn").siblings(".price").children("p").text());
-    let image = $(this).closest(".item-bottom").prev().children(".img1").children().attr("src");
-
-    let cart = JSON.parse(localStorage.getItem("product"));
-    let existProduct = cart.find(p => p.id == id);
-
-    if (existProduct === undefined && cart.length != 100) {
-      cart.push({
-        id: id,
-        img: image,
-        title: title,
-        price: price,
-        count: 1
-      })
-    } else {
-      if (existProduct) existProduct.count += 1;
-    }
-
-    if (existProduct === undefined && cart.length >= 100) {
-      // warning growl notification
-      $.toast({
-        heading: 'Warning',
-        text: 'Cart is FULL!',
-        icon: 'warning'
-      });
-    } else {
-      // success growl notification
-      $.toast({
-        heading: 'Success',
-        text: 'Product added to the CART.',
-        icon: 'success'
-      });
-    }
-
-    localStorage.setItem("product", JSON.stringify(cart));
-
-    createProduct();
-    getCartTotal();
-    getProductCount();
-  });
-
-  // getting product count
-  function getProductCount() {
-    let cart = JSON.parse(localStorage.getItem("product"));
-    let cartFooter = document.querySelector("#sidebar-cart .cart-footer");
-    let noProduct = document.querySelector("#sidebar-cart .no-product-wrapper");
-
-    $("header .cart-sup").text(cart.length);
-    $("#sidebar-cart .cart-header .product-count").text(cart.length);
-
-    if ($(cart).length > 0) {
-      cartBody.classList.remove("d-none");
-      cartFooter.classList.remove("d-none");
-      noProduct.classList.add("d-none");
-    } else {
-      cartBody.classList.add("d-none");
-      cartFooter.classList.add("d-none");
-      noProduct.classList.remove("d-none");
-    }
-  };
-
-  getProductCount();
-
-  // getting cart total price
-  function getCartTotal() {
-    let cartArr = JSON.parse(localStorage.getItem("product"));
-    let cartTotal = $("#sidebar-cart .cart-total");
-    let productTotalPrice = 0;
-    let cartTotalPrice = 0;
-
-    cartArr.forEach(item => {
-      productTotalPrice = item.count * item.price
-      cartTotalPrice += productTotalPrice;
-      cartTotal.text(`($${cartTotalPrice.toFixed(2)})`);
-    });
-  };
-
-  getCartTotal();
-
-  // creating product
-  function createProduct() {
-    if (localStorage.getItem("product") == null) {
-      localStorage.setItem("product", JSON.stringify([]));
-    }
-
-    let cart = JSON.parse(localStorage.getItem("product"));
-    let newProductItem = "";
-
-    cart.forEach(item => {
-      newProductItem +=
-        `<div class="product-item d-flex align-items-center justify-content-between">
-          <div class="product-img">
-            <img src=${item.img} alt="SonyTV1080p">
-          </div>
-          <div class="product-info w-100">
-            <a href="#">${item.title}</a>
-            <p class="text-muted product-count-and-price">
-              <span class="product-price">$${(item.price).toFixed(2)}</span>
-              <span className="multiplication">×</span>
-              <span class="product-count">${item.count}</span>
-            </p>
-            <p class="product-total-price">$${(item.count * item.price).toFixed(2)}</p>
-          </div>
-          <div class="remove-btn">
-            <button data-target-id=${item.id} class="remove-product" type="button">✕</button>
-          </div>
-        </div>`
-    });
-
-    cartBody.innerHTML = newProductItem;
-  };
-
-  // removing product
-  $("#sidebar-cart .cart-body").click(function (e) {
-    if (e.target.dataset.targetId) {
-      let id = e.target.dataset.targetId;
-      let cart = JSON.parse(localStorage.getItem("product"));
-
-      cart.splice(id, 1);
-
-      localStorage.setItem("product", JSON.stringify(cart));
-
-      getProductCount();
-      getCartTotal();
-      createProduct();
-
-      // error growl notification
-      $.toast({
-        heading: 'Removed',
-        text: 'Product removed from the cart.',
-      });
-    }
-  });
-
-  // ======= ADD TO CART (QUICK VIEW PRODUCT) ======= //
-  $(".add-to-cart #quantity-input-form").submit(function (e) {
-    e.preventDefault();
-    let id = $(this).closest(".item").attr("data-id");
-    let title = $(this).closest(".add-to-cart").siblings(".primary-info").children(".title").text();
-    let price = parseFloat($(this).closest(".add-to-cart").siblings(".primary-info").children(".price").find("p").text());
-    let image = $(this).closest(".modal-body").find(".first-img").children("img").attr("src");
-    let quantityInputVal = parseInt($('#quickViewModal input[type="text"]').val());
-
-    let cart = JSON.parse(localStorage.getItem("product"));
-    let existProduct = cart.find(p => p.id == id);
-
-    if (existProduct === undefined && cart.length != 100) {
-      cart.push({
-        id: id,
-        img: image,
-        title: title,
-        price: price,
-        count: quantityInputVal
-      })
-    } else {
-      if (existProduct) existProduct.count += quantityInputVal;
-    }
-
-    if (existProduct === undefined && cart.length >= 100) {
-      // warning growl notification
-      $.toast({
-        heading: 'Warning',
-        text: 'Cart is FULL!',
-        icon: 'warning'
-      });
-    } else {
-      // success growl notification
-      $.toast({
-        heading: 'Success',
-        text: 'Product added to the CART.',
-        icon: 'success'
-      });
-    }
-
-    localStorage.setItem("product", JSON.stringify(cart));
-
-    getProductCount();
-    getCartTotal();
-    createProduct();
-  });
-
-
   // ======= Countdown ======= //
   $(".countdown-active").countdown("2023/01/01", function (e) {
     $(this).html(e.strftime(
@@ -564,4 +373,195 @@ $(document).ready(function () {
       }
     });
   });
+});
+
+
+// =========== SHOPPING CART =========== //
+let cartBody = document.querySelector("#sidebar-cart .cart-body");
+
+createProduct();
+
+$(".add-to-cart-btn button").click(function () {
+  let id = $(this).closest(".item").attr("data-id");
+  let title = $(this).closest(".add-to-cart-btn").siblings(".title").children("a").text();
+  let price = parseFloat($(this).closest(".add-to-cart-btn").siblings(".price").children("p").text());
+  let image = $(this).closest(".item-bottom").prev().children(".img1").children().attr("src");
+
+  let cart = JSON.parse(localStorage.getItem("product"));
+  let existProduct = cart.find(p => p.id == id);
+
+  if (existProduct === undefined && cart.length != 100) {
+    cart.push({
+      id: id,
+      img: image,
+      title: title,
+      price: price,
+      count: 1
+    })
+  } else {
+    if (existProduct) existProduct.count += 1;
+  }
+
+  if (existProduct === undefined && cart.length >= 100) {
+    // warning growl notification
+    $.toast({
+      heading: 'Warning',
+      text: 'Cart is FULL!',
+      icon: 'warning'
+    });
+  } else {
+    // success growl notification
+    $.toast({
+      heading: 'Success',
+      text: 'Product added to the CART.',
+      icon: 'success'
+    });
+  }
+
+  localStorage.setItem("product", JSON.stringify(cart));
+
+  createProduct();
+  getCartTotal();
+  getProductCount();
+});
+
+// getting product count
+function getProductCount() {
+  let cart = JSON.parse(localStorage.getItem("product"));
+  let cartFooter = document.querySelector("#sidebar-cart .cart-footer");
+  let noProduct = document.querySelector("#sidebar-cart .no-product-wrapper");
+
+  $("header .cart-sup").text(cart.length);
+  $("#sidebar-cart .cart-header .product-count").text(cart.length);
+
+  if ($(cart).length > 0) {
+    cartBody.classList.remove("d-none");
+    cartFooter.classList.remove("d-none");
+    noProduct.classList.add("d-none");
+  } else {
+    cartBody.classList.add("d-none");
+    cartFooter.classList.add("d-none");
+    noProduct.classList.remove("d-none");
+  }
+};
+
+getProductCount();
+
+// getting cart total price
+function getCartTotal() {
+  let cartArr = JSON.parse(localStorage.getItem("product"));
+  let cartTotal = $("#sidebar-cart .cart-total");
+  let productTotalPrice = 0;
+  let cartTotalPrice = 0;
+
+  cartArr.forEach(item => {
+    productTotalPrice = item.count * item.price
+    cartTotalPrice += productTotalPrice;
+    cartTotal.text(`($${cartTotalPrice.toFixed(2)})`);
+  });
+};
+
+getCartTotal();
+
+// creating product
+function createProduct() {
+  if (localStorage.getItem("product") == null) {
+    localStorage.setItem("product", JSON.stringify([]));
+  }
+
+  let cart = JSON.parse(localStorage.getItem("product"));
+  let newProductItem = "";
+
+  cart.forEach(item => {
+    newProductItem +=
+      `<div class="product-item d-flex align-items-center justify-content-between">
+          <div class="product-img">
+            <img src=${item.img} alt="SonyTV1080p">
+          </div>
+          <div class="product-info w-100">
+            <a href="#">${item.title}</a>
+            <p class="text-muted product-count-and-price">
+              <span class="product-price">$${(item.price).toFixed(2)}</span>
+              <span className="multiplication">×</span>
+              <span class="product-count">${item.count}</span>
+            </p>
+            <p class="product-total-price">$${(item.count * item.price).toFixed(2)}</p>
+          </div>
+          <div class="remove-btn">
+            <button onclick="removeProduct(${item.id})" class="remove-product" type="button">✕</button>
+          </div>
+        </div>`
+  });
+
+  cartBody.innerHTML = newProductItem;
+};
+
+// removing product
+function removeProduct(id) {
+  let cart = JSON.parse(localStorage.getItem("product"));
+
+  cart.filter(item => {
+    if (id == item.id) {
+      cart.splice(item, 1);
+    }
+  })
+
+  localStorage.setItem("product", JSON.stringify(cart));
+
+  getProductCount();
+  getCartTotal();
+  createProduct();
+
+  // error growl notification
+  $.toast({
+    heading: 'Removed',
+    text: 'Product removed from the cart.',
+  });
+}
+
+// ======= ADD TO CART (QUICK VIEW PRODUCT) ======= //
+$(".add-to-cart #quantity-input-form").submit(function (e) {
+  e.preventDefault();
+  let id = $(this).closest(".item").attr("data-id");
+  let title = $(this).closest(".add-to-cart").siblings(".primary-info").children(".title").text();
+  let price = parseFloat($(this).closest(".add-to-cart").siblings(".primary-info").children(".price").find("p").text());
+  let image = $(this).closest(".modal-body").find(".first-img").children("img").attr("src");
+  let quantityInputVal = parseInt($('#quickViewModal input[type="text"]').val());
+
+  let cart = JSON.parse(localStorage.getItem("product"));
+  let existProduct = cart.find(p => p.id == id);
+
+  if (existProduct === undefined && cart.length != 100) {
+    cart.push({
+      id: id,
+      img: image,
+      title: title,
+      price: price,
+      count: quantityInputVal
+    })
+  } else {
+    if (existProduct) existProduct.count += quantityInputVal;
+  }
+
+  if (existProduct === undefined && cart.length >= 100) {
+    // warning growl notification
+    $.toast({
+      heading: 'Warning',
+      text: 'Cart is FULL!',
+      icon: 'warning'
+    });
+  } else {
+    // success growl notification
+    $.toast({
+      heading: 'Success',
+      text: 'Product added to the CART.',
+      icon: 'success'
+    });
+  }
+
+  localStorage.setItem("product", JSON.stringify(cart));
+
+  getProductCount();
+  getCartTotal();
+  createProduct();
 });

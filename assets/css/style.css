@@ -398,10 +398,6 @@ header {
   width: 100%;
 }
 
-.header-middle-content {
-  padding-right: 12px;
-}
-
 .header-middle form {
   width: 450px;
   position: relative;
@@ -579,7 +575,7 @@ header .actions li:hover .action-tooltip {
 }
 
 .header-bottom .categories-dropdown li:hover .submenu {
-  transform: translateX(-26px);
+  transform: translateX(-29px);
   opacity: 1;
   visibility: visible;
 }
